@@ -1,0 +1,5980 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO tri_cam_32x143_1r1w1c
+  CLASS BLOCK ;
+  FOREIGN tri_cam_32x143_1r1w1c ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 500.000 BY 1800.000 ;
+  PIN gnd
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 4.000 0.000 4.600 ;
+    END
+  END gnd
+  PIN vdd
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 8.000 0.000 8.600 ;
+    END
+  END vdd
+  PIN vcs
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 12.000 0.000 12.600 ;
+    END
+  END vcs
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 4.000 504.000 4.600 ;
+    END
+  END clk
+  PIN rst
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 8.000 504.000 8.600 ;
+    END
+  END rst
+  PIN tc_ccflush_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 12.000 504.000 12.600 ;
+    END
+  END tc_ccflush_dc
+  PIN tc_scan_dis_dc_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 16.000 504.000 16.600 ;
+    END
+  END tc_scan_dis_dc_b
+  PIN tc_scan_diag_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 20.000 504.000 20.600 ;
+    END
+  END tc_scan_diag_dc
+  PIN tc_lbist_en_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 24.000 504.000 24.600 ;
+    END
+  END tc_lbist_en_dc
+  PIN an_ac_atpg_en_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 28.000 504.000 28.600 ;
+    END
+  END an_ac_atpg_en_dc
+  PIN lcb_d_mode_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 32.000 504.000 32.600 ;
+    END
+  END lcb_d_mode_dc
+  PIN lcb_clkoff_dc_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 36.000 504.000 36.600 ;
+    END
+  END lcb_clkoff_dc_b
+  PIN lcb_act_dis_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 40.000 504.000 40.600 ;
+    END
+  END lcb_act_dis_dc
+  PIN lcb_mpw1_dc_b[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 44.000 504.000 44.600 ;
+    END
+  END lcb_mpw1_dc_b[0]
+  PIN lcb_mpw1_dc_b[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 48.000 504.000 48.600 ;
+    END
+  END lcb_mpw1_dc_b[1]
+  PIN lcb_mpw1_dc_b[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 52.000 504.000 52.600 ;
+    END
+  END lcb_mpw1_dc_b[2]
+  PIN lcb_mpw1_dc_b[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 56.000 504.000 56.600 ;
+    END
+  END lcb_mpw1_dc_b[3]
+  PIN lcb_mpw2_dc_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 60.000 504.000 60.600 ;
+    END
+  END lcb_mpw2_dc_b
+  PIN lcb_delay_lclkr_dc[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 64.000 504.000 64.600 ;
+    END
+  END lcb_delay_lclkr_dc[0]
+  PIN lcb_delay_lclkr_dc[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 68.000 504.000 68.600 ;
+    END
+  END lcb_delay_lclkr_dc[1]
+  PIN lcb_delay_lclkr_dc[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 72.000 504.000 72.600 ;
+    END
+  END lcb_delay_lclkr_dc[2]
+  PIN lcb_delay_lclkr_dc[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 76.000 504.000 76.600 ;
+    END
+  END lcb_delay_lclkr_dc[3]
+  PIN pc_sg_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 80.000 504.000 80.600 ;
+    END
+  END pc_sg_2
+  PIN pc_func_slp_sl_thold_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 84.000 504.000 84.600 ;
+    END
+  END pc_func_slp_sl_thold_2
+  PIN pc_func_slp_nsl_thold_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 88.000 504.000 88.600 ;
+    END
+  END pc_func_slp_nsl_thold_2
+  PIN pc_regf_slp_sl_thold_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 92.000 504.000 92.600 ;
+    END
+  END pc_regf_slp_sl_thold_2
+  PIN pc_time_sl_thold_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 96.000 504.000 96.600 ;
+    END
+  END pc_time_sl_thold_2
+  PIN pc_fce_2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 100.000 504.000 100.600 ;
+    END
+  END pc_fce_2
+  PIN func_scan_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 104.000 504.000 104.600 ;
+    END
+  END func_scan_in
+  PIN func_scan_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 16.000 0.000 16.600 ;
+    END
+  END func_scan_out
+  PIN regfile_scan_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 108.000 504.000 108.600 ;
+    END
+  END regfile_scan_in[0]
+  PIN regfile_scan_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 112.000 504.000 112.600 ;
+    END
+  END regfile_scan_in[1]
+  PIN regfile_scan_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 116.000 504.000 116.600 ;
+    END
+  END regfile_scan_in[2]
+  PIN regfile_scan_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 120.000 504.000 120.600 ;
+    END
+  END regfile_scan_in[3]
+  PIN regfile_scan_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 124.000 504.000 124.600 ;
+    END
+  END regfile_scan_in[4]
+  PIN regfile_scan_in[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 128.000 504.000 128.600 ;
+    END
+  END regfile_scan_in[5]
+  PIN regfile_scan_in[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 132.000 504.000 132.600 ;
+    END
+  END regfile_scan_in[6]
+  PIN regfile_scan_out[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 20.000 0.000 20.600 ;
+    END
+  END regfile_scan_out[0]
+  PIN regfile_scan_out[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 24.000 0.000 24.600 ;
+    END
+  END regfile_scan_out[1]
+  PIN regfile_scan_out[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 28.000 0.000 28.600 ;
+    END
+  END regfile_scan_out[2]
+  PIN regfile_scan_out[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 32.000 0.000 32.600 ;
+    END
+  END regfile_scan_out[3]
+  PIN regfile_scan_out[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 36.000 0.000 36.600 ;
+    END
+  END regfile_scan_out[4]
+  PIN regfile_scan_out[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 40.000 0.000 40.600 ;
+    END
+  END regfile_scan_out[5]
+  PIN regfile_scan_out[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 44.000 0.000 44.600 ;
+    END
+  END regfile_scan_out[6]
+  PIN time_scan_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 136.000 504.000 136.600 ;
+    END
+  END time_scan_in
+  PIN time_scan_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 48.000 0.000 48.600 ;
+    END
+  END time_scan_out
+  PIN rd_val
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 140.000 504.000 140.600 ;
+    END
+  END rd_val
+  PIN rd_val_late
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 144.000 504.000 144.600 ;
+    END
+  END rd_val_late
+  PIN rw_entry[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 148.000 504.000 148.600 ;
+    END
+  END rw_entry[0]
+  PIN rw_entry[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 152.000 504.000 152.600 ;
+    END
+  END rw_entry[1]
+  PIN rw_entry[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 156.000 504.000 156.600 ;
+    END
+  END rw_entry[2]
+  PIN rw_entry[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 160.000 504.000 160.600 ;
+    END
+  END rw_entry[3]
+  PIN rw_entry[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 164.000 504.000 164.600 ;
+    END
+  END rw_entry[4]
+  PIN wr_array_data[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 168.000 504.000 168.600 ;
+    END
+  END wr_array_data[0]
+  PIN wr_array_data[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 172.000 504.000 172.600 ;
+    END
+  END wr_array_data[1]
+  PIN wr_array_data[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 176.000 504.000 176.600 ;
+    END
+  END wr_array_data[2]
+  PIN wr_array_data[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 180.000 504.000 180.600 ;
+    END
+  END wr_array_data[3]
+  PIN wr_array_data[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 184.000 504.000 184.600 ;
+    END
+  END wr_array_data[4]
+  PIN wr_array_data[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 188.000 504.000 188.600 ;
+    END
+  END wr_array_data[5]
+  PIN wr_array_data[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 192.000 504.000 192.600 ;
+    END
+  END wr_array_data[6]
+  PIN wr_array_data[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 196.000 504.000 196.600 ;
+    END
+  END wr_array_data[7]
+  PIN wr_array_data[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 200.000 504.000 200.600 ;
+    END
+  END wr_array_data[8]
+  PIN wr_array_data[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 204.000 504.000 204.600 ;
+    END
+  END wr_array_data[9]
+  PIN wr_array_data[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 208.000 504.000 208.600 ;
+    END
+  END wr_array_data[10]
+  PIN wr_array_data[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 212.000 504.000 212.600 ;
+    END
+  END wr_array_data[11]
+  PIN wr_array_data[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 216.000 504.000 216.600 ;
+    END
+  END wr_array_data[12]
+  PIN wr_array_data[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 220.000 504.000 220.600 ;
+    END
+  END wr_array_data[13]
+  PIN wr_array_data[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 224.000 504.000 224.600 ;
+    END
+  END wr_array_data[14]
+  PIN wr_array_data[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 228.000 504.000 228.600 ;
+    END
+  END wr_array_data[15]
+  PIN wr_array_data[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 232.000 504.000 232.600 ;
+    END
+  END wr_array_data[16]
+  PIN wr_array_data[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 236.000 504.000 236.600 ;
+    END
+  END wr_array_data[17]
+  PIN wr_array_data[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 240.000 504.000 240.600 ;
+    END
+  END wr_array_data[18]
+  PIN wr_array_data[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 244.000 504.000 244.600 ;
+    END
+  END wr_array_data[19]
+  PIN wr_array_data[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 248.000 504.000 248.600 ;
+    END
+  END wr_array_data[20]
+  PIN wr_array_data[21]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 252.000 504.000 252.600 ;
+    END
+  END wr_array_data[21]
+  PIN wr_array_data[22]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 256.000 504.000 256.600 ;
+    END
+  END wr_array_data[22]
+  PIN wr_array_data[23]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 260.000 504.000 260.600 ;
+    END
+  END wr_array_data[23]
+  PIN wr_array_data[24]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 264.000 504.000 264.600 ;
+    END
+  END wr_array_data[24]
+  PIN wr_array_data[25]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 268.000 504.000 268.600 ;
+    END
+  END wr_array_data[25]
+  PIN wr_array_data[26]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 272.000 504.000 272.600 ;
+    END
+  END wr_array_data[26]
+  PIN wr_array_data[27]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 276.000 504.000 276.600 ;
+    END
+  END wr_array_data[27]
+  PIN wr_array_data[28]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 280.000 504.000 280.600 ;
+    END
+  END wr_array_data[28]
+  PIN wr_array_data[29]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 284.000 504.000 284.600 ;
+    END
+  END wr_array_data[29]
+  PIN wr_array_data[30]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 288.000 504.000 288.600 ;
+    END
+  END wr_array_data[30]
+  PIN wr_array_data[31]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 292.000 504.000 292.600 ;
+    END
+  END wr_array_data[31]
+  PIN wr_array_data[32]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 296.000 504.000 296.600 ;
+    END
+  END wr_array_data[32]
+  PIN wr_array_data[33]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 300.000 504.000 300.600 ;
+    END
+  END wr_array_data[33]
+  PIN wr_array_data[34]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 304.000 504.000 304.600 ;
+    END
+  END wr_array_data[34]
+  PIN wr_array_data[35]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 308.000 504.000 308.600 ;
+    END
+  END wr_array_data[35]
+  PIN wr_array_data[36]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 312.000 504.000 312.600 ;
+    END
+  END wr_array_data[36]
+  PIN wr_array_data[37]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 316.000 504.000 316.600 ;
+    END
+  END wr_array_data[37]
+  PIN wr_array_data[38]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 320.000 504.000 320.600 ;
+    END
+  END wr_array_data[38]
+  PIN wr_array_data[39]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 324.000 504.000 324.600 ;
+    END
+  END wr_array_data[39]
+  PIN wr_array_data[40]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 328.000 504.000 328.600 ;
+    END
+  END wr_array_data[40]
+  PIN wr_array_data[41]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 332.000 504.000 332.600 ;
+    END
+  END wr_array_data[41]
+  PIN wr_array_data[42]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 336.000 504.000 336.600 ;
+    END
+  END wr_array_data[42]
+  PIN wr_array_data[43]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 340.000 504.000 340.600 ;
+    END
+  END wr_array_data[43]
+  PIN wr_array_data[44]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 344.000 504.000 344.600 ;
+    END
+  END wr_array_data[44]
+  PIN wr_array_data[45]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 348.000 504.000 348.600 ;
+    END
+  END wr_array_data[45]
+  PIN wr_array_data[46]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 352.000 504.000 352.600 ;
+    END
+  END wr_array_data[46]
+  PIN wr_array_data[47]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 356.000 504.000 356.600 ;
+    END
+  END wr_array_data[47]
+  PIN wr_array_data[48]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 360.000 504.000 360.600 ;
+    END
+  END wr_array_data[48]
+  PIN wr_array_data[49]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 364.000 504.000 364.600 ;
+    END
+  END wr_array_data[49]
+  PIN wr_array_data[50]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 368.000 504.000 368.600 ;
+    END
+  END wr_array_data[50]
+  PIN wr_array_data[51]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 372.000 504.000 372.600 ;
+    END
+  END wr_array_data[51]
+  PIN wr_array_data[52]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 376.000 504.000 376.600 ;
+    END
+  END wr_array_data[52]
+  PIN wr_array_data[53]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 380.000 504.000 380.600 ;
+    END
+  END wr_array_data[53]
+  PIN wr_array_data[54]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 384.000 504.000 384.600 ;
+    END
+  END wr_array_data[54]
+  PIN wr_array_data[55]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 388.000 504.000 388.600 ;
+    END
+  END wr_array_data[55]
+  PIN wr_array_data[56]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 392.000 504.000 392.600 ;
+    END
+  END wr_array_data[56]
+  PIN wr_array_data[57]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 396.000 504.000 396.600 ;
+    END
+  END wr_array_data[57]
+  PIN wr_array_data[58]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 400.000 504.000 400.600 ;
+    END
+  END wr_array_data[58]
+  PIN wr_array_data[59]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 404.000 504.000 404.600 ;
+    END
+  END wr_array_data[59]
+  PIN wr_array_data[60]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 408.000 504.000 408.600 ;
+    END
+  END wr_array_data[60]
+  PIN wr_array_data[61]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 412.000 504.000 412.600 ;
+    END
+  END wr_array_data[61]
+  PIN wr_array_data[62]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 416.000 504.000 416.600 ;
+    END
+  END wr_array_data[62]
+  PIN wr_array_data[63]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 420.000 504.000 420.600 ;
+    END
+  END wr_array_data[63]
+  PIN wr_array_data[64]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 424.000 504.000 424.600 ;
+    END
+  END wr_array_data[64]
+  PIN wr_array_data[65]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 428.000 504.000 428.600 ;
+    END
+  END wr_array_data[65]
+  PIN wr_array_data[66]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 432.000 504.000 432.600 ;
+    END
+  END wr_array_data[66]
+  PIN wr_array_data[67]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 436.000 504.000 436.600 ;
+    END
+  END wr_array_data[67]
+  PIN wr_cam_data[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 440.000 504.000 440.600 ;
+    END
+  END wr_cam_data[0]
+  PIN wr_cam_data[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 444.000 504.000 444.600 ;
+    END
+  END wr_cam_data[1]
+  PIN wr_cam_data[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 448.000 504.000 448.600 ;
+    END
+  END wr_cam_data[2]
+  PIN wr_cam_data[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 452.000 504.000 452.600 ;
+    END
+  END wr_cam_data[3]
+  PIN wr_cam_data[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 456.000 504.000 456.600 ;
+    END
+  END wr_cam_data[4]
+  PIN wr_cam_data[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 460.000 504.000 460.600 ;
+    END
+  END wr_cam_data[5]
+  PIN wr_cam_data[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 464.000 504.000 464.600 ;
+    END
+  END wr_cam_data[6]
+  PIN wr_cam_data[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 468.000 504.000 468.600 ;
+    END
+  END wr_cam_data[7]
+  PIN wr_cam_data[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 472.000 504.000 472.600 ;
+    END
+  END wr_cam_data[8]
+  PIN wr_cam_data[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 476.000 504.000 476.600 ;
+    END
+  END wr_cam_data[9]
+  PIN wr_cam_data[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 480.000 504.000 480.600 ;
+    END
+  END wr_cam_data[10]
+  PIN wr_cam_data[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 484.000 504.000 484.600 ;
+    END
+  END wr_cam_data[11]
+  PIN wr_cam_data[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 488.000 504.000 488.600 ;
+    END
+  END wr_cam_data[12]
+  PIN wr_cam_data[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 492.000 504.000 492.600 ;
+    END
+  END wr_cam_data[13]
+  PIN wr_cam_data[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 496.000 504.000 496.600 ;
+    END
+  END wr_cam_data[14]
+  PIN wr_cam_data[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 500.000 504.000 500.600 ;
+    END
+  END wr_cam_data[15]
+  PIN wr_cam_data[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 504.000 504.000 504.600 ;
+    END
+  END wr_cam_data[16]
+  PIN wr_cam_data[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 508.000 504.000 508.600 ;
+    END
+  END wr_cam_data[17]
+  PIN wr_cam_data[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 512.000 504.000 512.600 ;
+    END
+  END wr_cam_data[18]
+  PIN wr_cam_data[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 516.000 504.000 516.600 ;
+    END
+  END wr_cam_data[19]
+  PIN wr_cam_data[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 520.000 504.000 520.600 ;
+    END
+  END wr_cam_data[20]
+  PIN wr_cam_data[21]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 524.000 504.000 524.600 ;
+    END
+  END wr_cam_data[21]
+  PIN wr_cam_data[22]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 528.000 504.000 528.600 ;
+    END
+  END wr_cam_data[22]
+  PIN wr_cam_data[23]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 532.000 504.000 532.600 ;
+    END
+  END wr_cam_data[23]
+  PIN wr_cam_data[24]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 536.000 504.000 536.600 ;
+    END
+  END wr_cam_data[24]
+  PIN wr_cam_data[25]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 540.000 504.000 540.600 ;
+    END
+  END wr_cam_data[25]
+  PIN wr_cam_data[26]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 544.000 504.000 544.600 ;
+    END
+  END wr_cam_data[26]
+  PIN wr_cam_data[27]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 548.000 504.000 548.600 ;
+    END
+  END wr_cam_data[27]
+  PIN wr_cam_data[28]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 552.000 504.000 552.600 ;
+    END
+  END wr_cam_data[28]
+  PIN wr_cam_data[29]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 556.000 504.000 556.600 ;
+    END
+  END wr_cam_data[29]
+  PIN wr_cam_data[30]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 560.000 504.000 560.600 ;
+    END
+  END wr_cam_data[30]
+  PIN wr_cam_data[31]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 564.000 504.000 564.600 ;
+    END
+  END wr_cam_data[31]
+  PIN wr_cam_data[32]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 568.000 504.000 568.600 ;
+    END
+  END wr_cam_data[32]
+  PIN wr_cam_data[33]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 572.000 504.000 572.600 ;
+    END
+  END wr_cam_data[33]
+  PIN wr_cam_data[34]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 576.000 504.000 576.600 ;
+    END
+  END wr_cam_data[34]
+  PIN wr_cam_data[35]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 580.000 504.000 580.600 ;
+    END
+  END wr_cam_data[35]
+  PIN wr_cam_data[36]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 584.000 504.000 584.600 ;
+    END
+  END wr_cam_data[36]
+  PIN wr_cam_data[37]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 588.000 504.000 588.600 ;
+    END
+  END wr_cam_data[37]
+  PIN wr_cam_data[38]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 592.000 504.000 592.600 ;
+    END
+  END wr_cam_data[38]
+  PIN wr_cam_data[39]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 596.000 504.000 596.600 ;
+    END
+  END wr_cam_data[39]
+  PIN wr_cam_data[40]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 600.000 504.000 600.600 ;
+    END
+  END wr_cam_data[40]
+  PIN wr_cam_data[41]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 604.000 504.000 604.600 ;
+    END
+  END wr_cam_data[41]
+  PIN wr_cam_data[42]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 608.000 504.000 608.600 ;
+    END
+  END wr_cam_data[42]
+  PIN wr_cam_data[43]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 612.000 504.000 612.600 ;
+    END
+  END wr_cam_data[43]
+  PIN wr_cam_data[44]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 616.000 504.000 616.600 ;
+    END
+  END wr_cam_data[44]
+  PIN wr_cam_data[45]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 620.000 504.000 620.600 ;
+    END
+  END wr_cam_data[45]
+  PIN wr_cam_data[46]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 624.000 504.000 624.600 ;
+    END
+  END wr_cam_data[46]
+  PIN wr_cam_data[47]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 628.000 504.000 628.600 ;
+    END
+  END wr_cam_data[47]
+  PIN wr_cam_data[48]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 632.000 504.000 632.600 ;
+    END
+  END wr_cam_data[48]
+  PIN wr_cam_data[49]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 636.000 504.000 636.600 ;
+    END
+  END wr_cam_data[49]
+  PIN wr_cam_data[50]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 640.000 504.000 640.600 ;
+    END
+  END wr_cam_data[50]
+  PIN wr_cam_data[51]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 644.000 504.000 644.600 ;
+    END
+  END wr_cam_data[51]
+  PIN wr_cam_data[52]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 648.000 504.000 648.600 ;
+    END
+  END wr_cam_data[52]
+  PIN wr_cam_data[53]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 652.000 504.000 652.600 ;
+    END
+  END wr_cam_data[53]
+  PIN wr_cam_data[54]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 656.000 504.000 656.600 ;
+    END
+  END wr_cam_data[54]
+  PIN wr_cam_data[55]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 660.000 504.000 660.600 ;
+    END
+  END wr_cam_data[55]
+  PIN wr_cam_data[56]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 664.000 504.000 664.600 ;
+    END
+  END wr_cam_data[56]
+  PIN wr_cam_data[57]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 668.000 504.000 668.600 ;
+    END
+  END wr_cam_data[57]
+  PIN wr_cam_data[58]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 672.000 504.000 672.600 ;
+    END
+  END wr_cam_data[58]
+  PIN wr_cam_data[59]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 676.000 504.000 676.600 ;
+    END
+  END wr_cam_data[59]
+  PIN wr_cam_data[60]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 680.000 504.000 680.600 ;
+    END
+  END wr_cam_data[60]
+  PIN wr_cam_data[61]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 684.000 504.000 684.600 ;
+    END
+  END wr_cam_data[61]
+  PIN wr_cam_data[62]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 688.000 504.000 688.600 ;
+    END
+  END wr_cam_data[62]
+  PIN wr_cam_data[63]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 692.000 504.000 692.600 ;
+    END
+  END wr_cam_data[63]
+  PIN wr_cam_data[64]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 696.000 504.000 696.600 ;
+    END
+  END wr_cam_data[64]
+  PIN wr_cam_data[65]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 700.000 504.000 700.600 ;
+    END
+  END wr_cam_data[65]
+  PIN wr_cam_data[66]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 704.000 504.000 704.600 ;
+    END
+  END wr_cam_data[66]
+  PIN wr_cam_data[67]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 708.000 504.000 708.600 ;
+    END
+  END wr_cam_data[67]
+  PIN wr_cam_data[68]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 712.000 504.000 712.600 ;
+    END
+  END wr_cam_data[68]
+  PIN wr_cam_data[69]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 716.000 504.000 716.600 ;
+    END
+  END wr_cam_data[69]
+  PIN wr_cam_data[70]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 720.000 504.000 720.600 ;
+    END
+  END wr_cam_data[70]
+  PIN wr_cam_data[71]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 724.000 504.000 724.600 ;
+    END
+  END wr_cam_data[71]
+  PIN wr_cam_data[72]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 728.000 504.000 728.600 ;
+    END
+  END wr_cam_data[72]
+  PIN wr_cam_data[73]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 732.000 504.000 732.600 ;
+    END
+  END wr_cam_data[73]
+  PIN wr_cam_data[74]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 736.000 504.000 736.600 ;
+    END
+  END wr_cam_data[74]
+  PIN wr_cam_data[75]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 740.000 504.000 740.600 ;
+    END
+  END wr_cam_data[75]
+  PIN wr_cam_data[76]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 744.000 504.000 744.600 ;
+    END
+  END wr_cam_data[76]
+  PIN wr_cam_data[77]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 748.000 504.000 748.600 ;
+    END
+  END wr_cam_data[77]
+  PIN wr_cam_data[78]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 752.000 504.000 752.600 ;
+    END
+  END wr_cam_data[78]
+  PIN wr_cam_data[79]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 756.000 504.000 756.600 ;
+    END
+  END wr_cam_data[79]
+  PIN wr_cam_data[80]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 760.000 504.000 760.600 ;
+    END
+  END wr_cam_data[80]
+  PIN wr_cam_data[81]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 764.000 504.000 764.600 ;
+    END
+  END wr_cam_data[81]
+  PIN wr_cam_data[82]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 768.000 504.000 768.600 ;
+    END
+  END wr_cam_data[82]
+  PIN wr_cam_data[83]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 772.000 504.000 772.600 ;
+    END
+  END wr_cam_data[83]
+  PIN wr_array_val[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 776.000 504.000 776.600 ;
+    END
+  END wr_array_val[0]
+  PIN wr_array_val[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 780.000 504.000 780.600 ;
+    END
+  END wr_array_val[1]
+  PIN wr_cam_val[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 784.000 504.000 784.600 ;
+    END
+  END wr_cam_val[0]
+  PIN wr_cam_val[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 788.000 504.000 788.600 ;
+    END
+  END wr_cam_val[1]
+  PIN wr_val_early
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 792.000 504.000 792.600 ;
+    END
+  END wr_val_early
+  PIN comp_request
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 796.000 504.000 796.600 ;
+    END
+  END comp_request
+  PIN comp_addr[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 800.000 504.000 800.600 ;
+    END
+  END comp_addr[0]
+  PIN comp_addr[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 804.000 504.000 804.600 ;
+    END
+  END comp_addr[1]
+  PIN comp_addr[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 808.000 504.000 808.600 ;
+    END
+  END comp_addr[2]
+  PIN comp_addr[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 812.000 504.000 812.600 ;
+    END
+  END comp_addr[3]
+  PIN comp_addr[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 816.000 504.000 816.600 ;
+    END
+  END comp_addr[4]
+  PIN comp_addr[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 820.000 504.000 820.600 ;
+    END
+  END comp_addr[5]
+  PIN comp_addr[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 824.000 504.000 824.600 ;
+    END
+  END comp_addr[6]
+  PIN comp_addr[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 828.000 504.000 828.600 ;
+    END
+  END comp_addr[7]
+  PIN comp_addr[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 832.000 504.000 832.600 ;
+    END
+  END comp_addr[8]
+  PIN comp_addr[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 836.000 504.000 836.600 ;
+    END
+  END comp_addr[9]
+  PIN comp_addr[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 840.000 504.000 840.600 ;
+    END
+  END comp_addr[10]
+  PIN comp_addr[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 844.000 504.000 844.600 ;
+    END
+  END comp_addr[11]
+  PIN comp_addr[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 848.000 504.000 848.600 ;
+    END
+  END comp_addr[12]
+  PIN comp_addr[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 852.000 504.000 852.600 ;
+    END
+  END comp_addr[13]
+  PIN comp_addr[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 856.000 504.000 856.600 ;
+    END
+  END comp_addr[14]
+  PIN comp_addr[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 860.000 504.000 860.600 ;
+    END
+  END comp_addr[15]
+  PIN comp_addr[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 864.000 504.000 864.600 ;
+    END
+  END comp_addr[16]
+  PIN comp_addr[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 868.000 504.000 868.600 ;
+    END
+  END comp_addr[17]
+  PIN comp_addr[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 872.000 504.000 872.600 ;
+    END
+  END comp_addr[18]
+  PIN comp_addr[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 876.000 504.000 876.600 ;
+    END
+  END comp_addr[19]
+  PIN comp_addr[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 880.000 504.000 880.600 ;
+    END
+  END comp_addr[20]
+  PIN comp_addr[21]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 884.000 504.000 884.600 ;
+    END
+  END comp_addr[21]
+  PIN comp_addr[22]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 888.000 504.000 888.600 ;
+    END
+  END comp_addr[22]
+  PIN comp_addr[23]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 892.000 504.000 892.600 ;
+    END
+  END comp_addr[23]
+  PIN comp_addr[24]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 896.000 504.000 896.600 ;
+    END
+  END comp_addr[24]
+  PIN comp_addr[25]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 900.000 504.000 900.600 ;
+    END
+  END comp_addr[25]
+  PIN comp_addr[26]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 904.000 504.000 904.600 ;
+    END
+  END comp_addr[26]
+  PIN comp_addr[27]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 908.000 504.000 908.600 ;
+    END
+  END comp_addr[27]
+  PIN comp_addr[28]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 912.000 504.000 912.600 ;
+    END
+  END comp_addr[28]
+  PIN comp_addr[29]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 916.000 504.000 916.600 ;
+    END
+  END comp_addr[29]
+  PIN comp_addr[30]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 920.000 504.000 920.600 ;
+    END
+  END comp_addr[30]
+  PIN comp_addr[31]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 924.000 504.000 924.600 ;
+    END
+  END comp_addr[31]
+  PIN comp_addr[32]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 928.000 504.000 928.600 ;
+    END
+  END comp_addr[32]
+  PIN comp_addr[33]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 932.000 504.000 932.600 ;
+    END
+  END comp_addr[33]
+  PIN comp_addr[34]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 936.000 504.000 936.600 ;
+    END
+  END comp_addr[34]
+  PIN comp_addr[35]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 940.000 504.000 940.600 ;
+    END
+  END comp_addr[35]
+  PIN comp_addr[36]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 944.000 504.000 944.600 ;
+    END
+  END comp_addr[36]
+  PIN comp_addr[37]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 948.000 504.000 948.600 ;
+    END
+  END comp_addr[37]
+  PIN comp_addr[38]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 952.000 504.000 952.600 ;
+    END
+  END comp_addr[38]
+  PIN comp_addr[39]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 956.000 504.000 956.600 ;
+    END
+  END comp_addr[39]
+  PIN comp_addr[40]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 960.000 504.000 960.600 ;
+    END
+  END comp_addr[40]
+  PIN comp_addr[41]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 964.000 504.000 964.600 ;
+    END
+  END comp_addr[41]
+  PIN comp_addr[42]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 968.000 504.000 968.600 ;
+    END
+  END comp_addr[42]
+  PIN comp_addr[43]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 972.000 504.000 972.600 ;
+    END
+  END comp_addr[43]
+  PIN comp_addr[44]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 976.000 504.000 976.600 ;
+    END
+  END comp_addr[44]
+  PIN comp_addr[45]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 980.000 504.000 980.600 ;
+    END
+  END comp_addr[45]
+  PIN comp_addr[46]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 984.000 504.000 984.600 ;
+    END
+  END comp_addr[46]
+  PIN comp_addr[47]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 988.000 504.000 988.600 ;
+    END
+  END comp_addr[47]
+  PIN comp_addr[48]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 992.000 504.000 992.600 ;
+    END
+  END comp_addr[48]
+  PIN comp_addr[49]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 996.000 504.000 996.600 ;
+    END
+  END comp_addr[49]
+  PIN comp_addr[50]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1000.000 504.000 1000.600 ;
+    END
+  END comp_addr[50]
+  PIN comp_addr[51]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1004.000 504.000 1004.600 ;
+    END
+  END comp_addr[51]
+  PIN addr_enable[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1008.000 504.000 1008.600 ;
+    END
+  END addr_enable[0]
+  PIN addr_enable[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1012.000 504.000 1012.600 ;
+    END
+  END addr_enable[1]
+  PIN comp_pgsize[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1016.000 504.000 1016.600 ;
+    END
+  END comp_pgsize[0]
+  PIN comp_pgsize[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1020.000 504.000 1020.600 ;
+    END
+  END comp_pgsize[1]
+  PIN comp_pgsize[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1024.000 504.000 1024.600 ;
+    END
+  END comp_pgsize[2]
+  PIN pgsize_enable
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1028.000 504.000 1028.600 ;
+    END
+  END pgsize_enable
+  PIN comp_class[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1032.000 504.000 1032.600 ;
+    END
+  END comp_class[0]
+  PIN comp_class[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1036.000 504.000 1036.600 ;
+    END
+  END comp_class[1]
+  PIN class_enable[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1040.000 504.000 1040.600 ;
+    END
+  END class_enable[0]
+  PIN class_enable[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1044.000 504.000 1044.600 ;
+    END
+  END class_enable[1]
+  PIN class_enable[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1048.000 504.000 1048.600 ;
+    END
+  END class_enable[2]
+  PIN comp_extclass[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1052.000 504.000 1052.600 ;
+    END
+  END comp_extclass[0]
+  PIN comp_extclass[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1056.000 504.000 1056.600 ;
+    END
+  END comp_extclass[1]
+  PIN extclass_enable[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1060.000 504.000 1060.600 ;
+    END
+  END extclass_enable[0]
+  PIN extclass_enable[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1064.000 504.000 1064.600 ;
+    END
+  END extclass_enable[1]
+  PIN comp_state[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1068.000 504.000 1068.600 ;
+    END
+  END comp_state[0]
+  PIN comp_state[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1072.000 504.000 1072.600 ;
+    END
+  END comp_state[1]
+  PIN state_enable[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1076.000 504.000 1076.600 ;
+    END
+  END state_enable[0]
+  PIN state_enable[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1080.000 504.000 1080.600 ;
+    END
+  END state_enable[1]
+  PIN comp_thdid[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1084.000 504.000 1084.600 ;
+    END
+  END comp_thdid[0]
+  PIN comp_thdid[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1088.000 504.000 1088.600 ;
+    END
+  END comp_thdid[1]
+  PIN comp_thdid[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1092.000 504.000 1092.600 ;
+    END
+  END comp_thdid[2]
+  PIN comp_thdid[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1096.000 504.000 1096.600 ;
+    END
+  END comp_thdid[3]
+  PIN thdid_enable[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1100.000 504.000 1100.600 ;
+    END
+  END thdid_enable[0]
+  PIN thdid_enable[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1104.000 504.000 1104.600 ;
+    END
+  END thdid_enable[1]
+  PIN comp_pid[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1108.000 504.000 1108.600 ;
+    END
+  END comp_pid[0]
+  PIN comp_pid[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1112.000 504.000 1112.600 ;
+    END
+  END comp_pid[1]
+  PIN comp_pid[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1116.000 504.000 1116.600 ;
+    END
+  END comp_pid[2]
+  PIN comp_pid[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1120.000 504.000 1120.600 ;
+    END
+  END comp_pid[3]
+  PIN comp_pid[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1124.000 504.000 1124.600 ;
+    END
+  END comp_pid[4]
+  PIN comp_pid[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1128.000 504.000 1128.600 ;
+    END
+  END comp_pid[5]
+  PIN comp_pid[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1132.000 504.000 1132.600 ;
+    END
+  END comp_pid[6]
+  PIN comp_pid[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1136.000 504.000 1136.600 ;
+    END
+  END comp_pid[7]
+  PIN pid_enable
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1140.000 504.000 1140.600 ;
+    END
+  END pid_enable
+  PIN comp_invalidate
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1144.000 504.000 1144.600 ;
+    END
+  END comp_invalidate
+  PIN flash_invalidate
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1148.000 504.000 1148.600 ;
+    END
+  END flash_invalidate
+  PIN array_cmp_data[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 52.000 0.000 52.600 ;
+    END
+  END array_cmp_data[0]
+  PIN array_cmp_data[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 56.000 0.000 56.600 ;
+    END
+  END array_cmp_data[1]
+  PIN array_cmp_data[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 60.000 0.000 60.600 ;
+    END
+  END array_cmp_data[2]
+  PIN array_cmp_data[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 64.000 0.000 64.600 ;
+    END
+  END array_cmp_data[3]
+  PIN array_cmp_data[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 68.000 0.000 68.600 ;
+    END
+  END array_cmp_data[4]
+  PIN array_cmp_data[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 72.000 0.000 72.600 ;
+    END
+  END array_cmp_data[5]
+  PIN array_cmp_data[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 76.000 0.000 76.600 ;
+    END
+  END array_cmp_data[6]
+  PIN array_cmp_data[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 80.000 0.000 80.600 ;
+    END
+  END array_cmp_data[7]
+  PIN array_cmp_data[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 84.000 0.000 84.600 ;
+    END
+  END array_cmp_data[8]
+  PIN array_cmp_data[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 88.000 0.000 88.600 ;
+    END
+  END array_cmp_data[9]
+  PIN array_cmp_data[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 92.000 0.000 92.600 ;
+    END
+  END array_cmp_data[10]
+  PIN array_cmp_data[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 96.000 0.000 96.600 ;
+    END
+  END array_cmp_data[11]
+  PIN array_cmp_data[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 100.000 0.000 100.600 ;
+    END
+  END array_cmp_data[12]
+  PIN array_cmp_data[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 104.000 0.000 104.600 ;
+    END
+  END array_cmp_data[13]
+  PIN array_cmp_data[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 108.000 0.000 108.600 ;
+    END
+  END array_cmp_data[14]
+  PIN array_cmp_data[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 112.000 0.000 112.600 ;
+    END
+  END array_cmp_data[15]
+  PIN array_cmp_data[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 116.000 0.000 116.600 ;
+    END
+  END array_cmp_data[16]
+  PIN array_cmp_data[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 120.000 0.000 120.600 ;
+    END
+  END array_cmp_data[17]
+  PIN array_cmp_data[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 124.000 0.000 124.600 ;
+    END
+  END array_cmp_data[18]
+  PIN array_cmp_data[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 128.000 0.000 128.600 ;
+    END
+  END array_cmp_data[19]
+  PIN array_cmp_data[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 132.000 0.000 132.600 ;
+    END
+  END array_cmp_data[20]
+  PIN array_cmp_data[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 136.000 0.000 136.600 ;
+    END
+  END array_cmp_data[21]
+  PIN array_cmp_data[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 140.000 0.000 140.600 ;
+    END
+  END array_cmp_data[22]
+  PIN array_cmp_data[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 144.000 0.000 144.600 ;
+    END
+  END array_cmp_data[23]
+  PIN array_cmp_data[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 148.000 0.000 148.600 ;
+    END
+  END array_cmp_data[24]
+  PIN array_cmp_data[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 152.000 0.000 152.600 ;
+    END
+  END array_cmp_data[25]
+  PIN array_cmp_data[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 156.000 0.000 156.600 ;
+    END
+  END array_cmp_data[26]
+  PIN array_cmp_data[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 160.000 0.000 160.600 ;
+    END
+  END array_cmp_data[27]
+  PIN array_cmp_data[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 164.000 0.000 164.600 ;
+    END
+  END array_cmp_data[28]
+  PIN array_cmp_data[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 168.000 0.000 168.600 ;
+    END
+  END array_cmp_data[29]
+  PIN array_cmp_data[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 172.000 0.000 172.600 ;
+    END
+  END array_cmp_data[30]
+  PIN array_cmp_data[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 176.000 0.000 176.600 ;
+    END
+  END array_cmp_data[31]
+  PIN array_cmp_data[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 180.000 0.000 180.600 ;
+    END
+  END array_cmp_data[32]
+  PIN array_cmp_data[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 184.000 0.000 184.600 ;
+    END
+  END array_cmp_data[33]
+  PIN array_cmp_data[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 188.000 0.000 188.600 ;
+    END
+  END array_cmp_data[34]
+  PIN array_cmp_data[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 192.000 0.000 192.600 ;
+    END
+  END array_cmp_data[35]
+  PIN array_cmp_data[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 196.000 0.000 196.600 ;
+    END
+  END array_cmp_data[36]
+  PIN array_cmp_data[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 200.000 0.000 200.600 ;
+    END
+  END array_cmp_data[37]
+  PIN array_cmp_data[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 204.000 0.000 204.600 ;
+    END
+  END array_cmp_data[38]
+  PIN array_cmp_data[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 208.000 0.000 208.600 ;
+    END
+  END array_cmp_data[39]
+  PIN array_cmp_data[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 212.000 0.000 212.600 ;
+    END
+  END array_cmp_data[40]
+  PIN array_cmp_data[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 216.000 0.000 216.600 ;
+    END
+  END array_cmp_data[41]
+  PIN array_cmp_data[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 220.000 0.000 220.600 ;
+    END
+  END array_cmp_data[42]
+  PIN array_cmp_data[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 224.000 0.000 224.600 ;
+    END
+  END array_cmp_data[43]
+  PIN array_cmp_data[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 228.000 0.000 228.600 ;
+    END
+  END array_cmp_data[44]
+  PIN array_cmp_data[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 232.000 0.000 232.600 ;
+    END
+  END array_cmp_data[45]
+  PIN array_cmp_data[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 236.000 0.000 236.600 ;
+    END
+  END array_cmp_data[46]
+  PIN array_cmp_data[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 240.000 0.000 240.600 ;
+    END
+  END array_cmp_data[47]
+  PIN array_cmp_data[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 244.000 0.000 244.600 ;
+    END
+  END array_cmp_data[48]
+  PIN array_cmp_data[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 248.000 0.000 248.600 ;
+    END
+  END array_cmp_data[49]
+  PIN array_cmp_data[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 252.000 0.000 252.600 ;
+    END
+  END array_cmp_data[50]
+  PIN array_cmp_data[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 256.000 0.000 256.600 ;
+    END
+  END array_cmp_data[51]
+  PIN array_cmp_data[52]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 260.000 0.000 260.600 ;
+    END
+  END array_cmp_data[52]
+  PIN array_cmp_data[53]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 264.000 0.000 264.600 ;
+    END
+  END array_cmp_data[53]
+  PIN array_cmp_data[54]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 268.000 0.000 268.600 ;
+    END
+  END array_cmp_data[54]
+  PIN array_cmp_data[55]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 272.000 0.000 272.600 ;
+    END
+  END array_cmp_data[55]
+  PIN array_cmp_data[56]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 276.000 0.000 276.600 ;
+    END
+  END array_cmp_data[56]
+  PIN array_cmp_data[57]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 280.000 0.000 280.600 ;
+    END
+  END array_cmp_data[57]
+  PIN array_cmp_data[58]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 284.000 0.000 284.600 ;
+    END
+  END array_cmp_data[58]
+  PIN array_cmp_data[59]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 288.000 0.000 288.600 ;
+    END
+  END array_cmp_data[59]
+  PIN array_cmp_data[60]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 292.000 0.000 292.600 ;
+    END
+  END array_cmp_data[60]
+  PIN array_cmp_data[61]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 296.000 0.000 296.600 ;
+    END
+  END array_cmp_data[61]
+  PIN array_cmp_data[62]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 300.000 0.000 300.600 ;
+    END
+  END array_cmp_data[62]
+  PIN array_cmp_data[63]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 304.000 0.000 304.600 ;
+    END
+  END array_cmp_data[63]
+  PIN array_cmp_data[64]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 308.000 0.000 308.600 ;
+    END
+  END array_cmp_data[64]
+  PIN array_cmp_data[65]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 312.000 0.000 312.600 ;
+    END
+  END array_cmp_data[65]
+  PIN array_cmp_data[66]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 316.000 0.000 316.600 ;
+    END
+  END array_cmp_data[66]
+  PIN array_cmp_data[67]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 320.000 0.000 320.600 ;
+    END
+  END array_cmp_data[67]
+  PIN rd_array_data[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 324.000 0.000 324.600 ;
+    END
+  END rd_array_data[0]
+  PIN rd_array_data[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 328.000 0.000 328.600 ;
+    END
+  END rd_array_data[1]
+  PIN rd_array_data[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 332.000 0.000 332.600 ;
+    END
+  END rd_array_data[2]
+  PIN rd_array_data[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 336.000 0.000 336.600 ;
+    END
+  END rd_array_data[3]
+  PIN rd_array_data[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 340.000 0.000 340.600 ;
+    END
+  END rd_array_data[4]
+  PIN rd_array_data[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 344.000 0.000 344.600 ;
+    END
+  END rd_array_data[5]
+  PIN rd_array_data[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 348.000 0.000 348.600 ;
+    END
+  END rd_array_data[6]
+  PIN rd_array_data[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 352.000 0.000 352.600 ;
+    END
+  END rd_array_data[7]
+  PIN rd_array_data[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 356.000 0.000 356.600 ;
+    END
+  END rd_array_data[8]
+  PIN rd_array_data[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 360.000 0.000 360.600 ;
+    END
+  END rd_array_data[9]
+  PIN rd_array_data[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 364.000 0.000 364.600 ;
+    END
+  END rd_array_data[10]
+  PIN rd_array_data[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 368.000 0.000 368.600 ;
+    END
+  END rd_array_data[11]
+  PIN rd_array_data[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 372.000 0.000 372.600 ;
+    END
+  END rd_array_data[12]
+  PIN rd_array_data[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 376.000 0.000 376.600 ;
+    END
+  END rd_array_data[13]
+  PIN rd_array_data[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 380.000 0.000 380.600 ;
+    END
+  END rd_array_data[14]
+  PIN rd_array_data[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 384.000 0.000 384.600 ;
+    END
+  END rd_array_data[15]
+  PIN rd_array_data[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 388.000 0.000 388.600 ;
+    END
+  END rd_array_data[16]
+  PIN rd_array_data[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 392.000 0.000 392.600 ;
+    END
+  END rd_array_data[17]
+  PIN rd_array_data[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 396.000 0.000 396.600 ;
+    END
+  END rd_array_data[18]
+  PIN rd_array_data[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 400.000 0.000 400.600 ;
+    END
+  END rd_array_data[19]
+  PIN rd_array_data[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 404.000 0.000 404.600 ;
+    END
+  END rd_array_data[20]
+  PIN rd_array_data[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 408.000 0.000 408.600 ;
+    END
+  END rd_array_data[21]
+  PIN rd_array_data[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 412.000 0.000 412.600 ;
+    END
+  END rd_array_data[22]
+  PIN rd_array_data[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 416.000 0.000 416.600 ;
+    END
+  END rd_array_data[23]
+  PIN rd_array_data[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 420.000 0.000 420.600 ;
+    END
+  END rd_array_data[24]
+  PIN rd_array_data[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 424.000 0.000 424.600 ;
+    END
+  END rd_array_data[25]
+  PIN rd_array_data[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 428.000 0.000 428.600 ;
+    END
+  END rd_array_data[26]
+  PIN rd_array_data[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 432.000 0.000 432.600 ;
+    END
+  END rd_array_data[27]
+  PIN rd_array_data[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 436.000 0.000 436.600 ;
+    END
+  END rd_array_data[28]
+  PIN rd_array_data[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 440.000 0.000 440.600 ;
+    END
+  END rd_array_data[29]
+  PIN rd_array_data[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 444.000 0.000 444.600 ;
+    END
+  END rd_array_data[30]
+  PIN rd_array_data[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 448.000 0.000 448.600 ;
+    END
+  END rd_array_data[31]
+  PIN rd_array_data[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 452.000 0.000 452.600 ;
+    END
+  END rd_array_data[32]
+  PIN rd_array_data[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 456.000 0.000 456.600 ;
+    END
+  END rd_array_data[33]
+  PIN rd_array_data[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 460.000 0.000 460.600 ;
+    END
+  END rd_array_data[34]
+  PIN rd_array_data[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 464.000 0.000 464.600 ;
+    END
+  END rd_array_data[35]
+  PIN rd_array_data[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 468.000 0.000 468.600 ;
+    END
+  END rd_array_data[36]
+  PIN rd_array_data[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 472.000 0.000 472.600 ;
+    END
+  END rd_array_data[37]
+  PIN rd_array_data[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 476.000 0.000 476.600 ;
+    END
+  END rd_array_data[38]
+  PIN rd_array_data[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 480.000 0.000 480.600 ;
+    END
+  END rd_array_data[39]
+  PIN rd_array_data[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 484.000 0.000 484.600 ;
+    END
+  END rd_array_data[40]
+  PIN rd_array_data[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 488.000 0.000 488.600 ;
+    END
+  END rd_array_data[41]
+  PIN rd_array_data[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 492.000 0.000 492.600 ;
+    END
+  END rd_array_data[42]
+  PIN rd_array_data[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 496.000 0.000 496.600 ;
+    END
+  END rd_array_data[43]
+  PIN rd_array_data[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 500.000 0.000 500.600 ;
+    END
+  END rd_array_data[44]
+  PIN rd_array_data[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 504.000 0.000 504.600 ;
+    END
+  END rd_array_data[45]
+  PIN rd_array_data[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 508.000 0.000 508.600 ;
+    END
+  END rd_array_data[46]
+  PIN rd_array_data[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 512.000 0.000 512.600 ;
+    END
+  END rd_array_data[47]
+  PIN rd_array_data[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 516.000 0.000 516.600 ;
+    END
+  END rd_array_data[48]
+  PIN rd_array_data[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 520.000 0.000 520.600 ;
+    END
+  END rd_array_data[49]
+  PIN rd_array_data[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 524.000 0.000 524.600 ;
+    END
+  END rd_array_data[50]
+  PIN rd_array_data[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 528.000 0.000 528.600 ;
+    END
+  END rd_array_data[51]
+  PIN rd_array_data[52]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 532.000 0.000 532.600 ;
+    END
+  END rd_array_data[52]
+  PIN rd_array_data[53]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 536.000 0.000 536.600 ;
+    END
+  END rd_array_data[53]
+  PIN rd_array_data[54]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 540.000 0.000 540.600 ;
+    END
+  END rd_array_data[54]
+  PIN rd_array_data[55]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 544.000 0.000 544.600 ;
+    END
+  END rd_array_data[55]
+  PIN rd_array_data[56]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 548.000 0.000 548.600 ;
+    END
+  END rd_array_data[56]
+  PIN rd_array_data[57]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 552.000 0.000 552.600 ;
+    END
+  END rd_array_data[57]
+  PIN rd_array_data[58]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 556.000 0.000 556.600 ;
+    END
+  END rd_array_data[58]
+  PIN rd_array_data[59]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 560.000 0.000 560.600 ;
+    END
+  END rd_array_data[59]
+  PIN rd_array_data[60]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 564.000 0.000 564.600 ;
+    END
+  END rd_array_data[60]
+  PIN rd_array_data[61]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 568.000 0.000 568.600 ;
+    END
+  END rd_array_data[61]
+  PIN rd_array_data[62]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 572.000 0.000 572.600 ;
+    END
+  END rd_array_data[62]
+  PIN rd_array_data[63]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 576.000 0.000 576.600 ;
+    END
+  END rd_array_data[63]
+  PIN rd_array_data[64]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 580.000 0.000 580.600 ;
+    END
+  END rd_array_data[64]
+  PIN rd_array_data[65]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 584.000 0.000 584.600 ;
+    END
+  END rd_array_data[65]
+  PIN rd_array_data[66]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 588.000 0.000 588.600 ;
+    END
+  END rd_array_data[66]
+  PIN rd_array_data[67]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 592.000 0.000 592.600 ;
+    END
+  END rd_array_data[67]
+  PIN cam_cmp_data[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 596.000 0.000 596.600 ;
+    END
+  END cam_cmp_data[0]
+  PIN cam_cmp_data[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 600.000 0.000 600.600 ;
+    END
+  END cam_cmp_data[1]
+  PIN cam_cmp_data[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 604.000 0.000 604.600 ;
+    END
+  END cam_cmp_data[2]
+  PIN cam_cmp_data[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 608.000 0.000 608.600 ;
+    END
+  END cam_cmp_data[3]
+  PIN cam_cmp_data[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 612.000 0.000 612.600 ;
+    END
+  END cam_cmp_data[4]
+  PIN cam_cmp_data[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 616.000 0.000 616.600 ;
+    END
+  END cam_cmp_data[5]
+  PIN cam_cmp_data[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 620.000 0.000 620.600 ;
+    END
+  END cam_cmp_data[6]
+  PIN cam_cmp_data[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 624.000 0.000 624.600 ;
+    END
+  END cam_cmp_data[7]
+  PIN cam_cmp_data[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 628.000 0.000 628.600 ;
+    END
+  END cam_cmp_data[8]
+  PIN cam_cmp_data[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 632.000 0.000 632.600 ;
+    END
+  END cam_cmp_data[9]
+  PIN cam_cmp_data[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 636.000 0.000 636.600 ;
+    END
+  END cam_cmp_data[10]
+  PIN cam_cmp_data[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 640.000 0.000 640.600 ;
+    END
+  END cam_cmp_data[11]
+  PIN cam_cmp_data[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 644.000 0.000 644.600 ;
+    END
+  END cam_cmp_data[12]
+  PIN cam_cmp_data[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 648.000 0.000 648.600 ;
+    END
+  END cam_cmp_data[13]
+  PIN cam_cmp_data[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 652.000 0.000 652.600 ;
+    END
+  END cam_cmp_data[14]
+  PIN cam_cmp_data[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 656.000 0.000 656.600 ;
+    END
+  END cam_cmp_data[15]
+  PIN cam_cmp_data[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 660.000 0.000 660.600 ;
+    END
+  END cam_cmp_data[16]
+  PIN cam_cmp_data[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 664.000 0.000 664.600 ;
+    END
+  END cam_cmp_data[17]
+  PIN cam_cmp_data[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 668.000 0.000 668.600 ;
+    END
+  END cam_cmp_data[18]
+  PIN cam_cmp_data[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 672.000 0.000 672.600 ;
+    END
+  END cam_cmp_data[19]
+  PIN cam_cmp_data[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 676.000 0.000 676.600 ;
+    END
+  END cam_cmp_data[20]
+  PIN cam_cmp_data[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 680.000 0.000 680.600 ;
+    END
+  END cam_cmp_data[21]
+  PIN cam_cmp_data[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 684.000 0.000 684.600 ;
+    END
+  END cam_cmp_data[22]
+  PIN cam_cmp_data[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 688.000 0.000 688.600 ;
+    END
+  END cam_cmp_data[23]
+  PIN cam_cmp_data[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 692.000 0.000 692.600 ;
+    END
+  END cam_cmp_data[24]
+  PIN cam_cmp_data[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 696.000 0.000 696.600 ;
+    END
+  END cam_cmp_data[25]
+  PIN cam_cmp_data[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 700.000 0.000 700.600 ;
+    END
+  END cam_cmp_data[26]
+  PIN cam_cmp_data[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 704.000 0.000 704.600 ;
+    END
+  END cam_cmp_data[27]
+  PIN cam_cmp_data[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 708.000 0.000 708.600 ;
+    END
+  END cam_cmp_data[28]
+  PIN cam_cmp_data[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 712.000 0.000 712.600 ;
+    END
+  END cam_cmp_data[29]
+  PIN cam_cmp_data[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 716.000 0.000 716.600 ;
+    END
+  END cam_cmp_data[30]
+  PIN cam_cmp_data[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 720.000 0.000 720.600 ;
+    END
+  END cam_cmp_data[31]
+  PIN cam_cmp_data[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 724.000 0.000 724.600 ;
+    END
+  END cam_cmp_data[32]
+  PIN cam_cmp_data[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 728.000 0.000 728.600 ;
+    END
+  END cam_cmp_data[33]
+  PIN cam_cmp_data[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 732.000 0.000 732.600 ;
+    END
+  END cam_cmp_data[34]
+  PIN cam_cmp_data[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 736.000 0.000 736.600 ;
+    END
+  END cam_cmp_data[35]
+  PIN cam_cmp_data[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 740.000 0.000 740.600 ;
+    END
+  END cam_cmp_data[36]
+  PIN cam_cmp_data[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 744.000 0.000 744.600 ;
+    END
+  END cam_cmp_data[37]
+  PIN cam_cmp_data[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 748.000 0.000 748.600 ;
+    END
+  END cam_cmp_data[38]
+  PIN cam_cmp_data[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 752.000 0.000 752.600 ;
+    END
+  END cam_cmp_data[39]
+  PIN cam_cmp_data[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 756.000 0.000 756.600 ;
+    END
+  END cam_cmp_data[40]
+  PIN cam_cmp_data[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 760.000 0.000 760.600 ;
+    END
+  END cam_cmp_data[41]
+  PIN cam_cmp_data[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 764.000 0.000 764.600 ;
+    END
+  END cam_cmp_data[42]
+  PIN cam_cmp_data[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 768.000 0.000 768.600 ;
+    END
+  END cam_cmp_data[43]
+  PIN cam_cmp_data[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 772.000 0.000 772.600 ;
+    END
+  END cam_cmp_data[44]
+  PIN cam_cmp_data[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 776.000 0.000 776.600 ;
+    END
+  END cam_cmp_data[45]
+  PIN cam_cmp_data[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 780.000 0.000 780.600 ;
+    END
+  END cam_cmp_data[46]
+  PIN cam_cmp_data[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 784.000 0.000 784.600 ;
+    END
+  END cam_cmp_data[47]
+  PIN cam_cmp_data[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 788.000 0.000 788.600 ;
+    END
+  END cam_cmp_data[48]
+  PIN cam_cmp_data[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 792.000 0.000 792.600 ;
+    END
+  END cam_cmp_data[49]
+  PIN cam_cmp_data[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 796.000 0.000 796.600 ;
+    END
+  END cam_cmp_data[50]
+  PIN cam_cmp_data[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 800.000 0.000 800.600 ;
+    END
+  END cam_cmp_data[51]
+  PIN cam_cmp_data[52]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 804.000 0.000 804.600 ;
+    END
+  END cam_cmp_data[52]
+  PIN cam_cmp_data[53]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 808.000 0.000 808.600 ;
+    END
+  END cam_cmp_data[53]
+  PIN cam_cmp_data[54]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 812.000 0.000 812.600 ;
+    END
+  END cam_cmp_data[54]
+  PIN cam_cmp_data[55]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 816.000 0.000 816.600 ;
+    END
+  END cam_cmp_data[55]
+  PIN cam_cmp_data[56]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 820.000 0.000 820.600 ;
+    END
+  END cam_cmp_data[56]
+  PIN cam_cmp_data[57]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 824.000 0.000 824.600 ;
+    END
+  END cam_cmp_data[57]
+  PIN cam_cmp_data[58]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 828.000 0.000 828.600 ;
+    END
+  END cam_cmp_data[58]
+  PIN cam_cmp_data[59]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 832.000 0.000 832.600 ;
+    END
+  END cam_cmp_data[59]
+  PIN cam_cmp_data[60]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 836.000 0.000 836.600 ;
+    END
+  END cam_cmp_data[60]
+  PIN cam_cmp_data[61]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 840.000 0.000 840.600 ;
+    END
+  END cam_cmp_data[61]
+  PIN cam_cmp_data[62]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 844.000 0.000 844.600 ;
+    END
+  END cam_cmp_data[62]
+  PIN cam_cmp_data[63]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 848.000 0.000 848.600 ;
+    END
+  END cam_cmp_data[63]
+  PIN cam_cmp_data[64]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 852.000 0.000 852.600 ;
+    END
+  END cam_cmp_data[64]
+  PIN cam_cmp_data[65]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 856.000 0.000 856.600 ;
+    END
+  END cam_cmp_data[65]
+  PIN cam_cmp_data[66]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 860.000 0.000 860.600 ;
+    END
+  END cam_cmp_data[66]
+  PIN cam_cmp_data[67]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 864.000 0.000 864.600 ;
+    END
+  END cam_cmp_data[67]
+  PIN cam_cmp_data[68]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 868.000 0.000 868.600 ;
+    END
+  END cam_cmp_data[68]
+  PIN cam_cmp_data[69]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 872.000 0.000 872.600 ;
+    END
+  END cam_cmp_data[69]
+  PIN cam_cmp_data[70]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 876.000 0.000 876.600 ;
+    END
+  END cam_cmp_data[70]
+  PIN cam_cmp_data[71]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 880.000 0.000 880.600 ;
+    END
+  END cam_cmp_data[71]
+  PIN cam_cmp_data[72]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 884.000 0.000 884.600 ;
+    END
+  END cam_cmp_data[72]
+  PIN cam_cmp_data[73]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 888.000 0.000 888.600 ;
+    END
+  END cam_cmp_data[73]
+  PIN cam_cmp_data[74]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 892.000 0.000 892.600 ;
+    END
+  END cam_cmp_data[74]
+  PIN cam_cmp_data[75]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 896.000 0.000 896.600 ;
+    END
+  END cam_cmp_data[75]
+  PIN cam_cmp_data[76]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 900.000 0.000 900.600 ;
+    END
+  END cam_cmp_data[76]
+  PIN cam_cmp_data[77]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 904.000 0.000 904.600 ;
+    END
+  END cam_cmp_data[77]
+  PIN cam_cmp_data[78]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 908.000 0.000 908.600 ;
+    END
+  END cam_cmp_data[78]
+  PIN cam_cmp_data[79]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 912.000 0.000 912.600 ;
+    END
+  END cam_cmp_data[79]
+  PIN cam_cmp_data[80]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 916.000 0.000 916.600 ;
+    END
+  END cam_cmp_data[80]
+  PIN cam_cmp_data[81]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 920.000 0.000 920.600 ;
+    END
+  END cam_cmp_data[81]
+  PIN cam_cmp_data[82]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 924.000 0.000 924.600 ;
+    END
+  END cam_cmp_data[82]
+  PIN cam_cmp_data[83]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 928.000 0.000 928.600 ;
+    END
+  END cam_cmp_data[83]
+  PIN cam_hit
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 932.000 0.000 932.600 ;
+    END
+  END cam_hit
+  PIN cam_hit_entry[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 936.000 0.000 936.600 ;
+    END
+  END cam_hit_entry[0]
+  PIN cam_hit_entry[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 940.000 0.000 940.600 ;
+    END
+  END cam_hit_entry[1]
+  PIN cam_hit_entry[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 944.000 0.000 944.600 ;
+    END
+  END cam_hit_entry[2]
+  PIN cam_hit_entry[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 948.000 0.000 948.600 ;
+    END
+  END cam_hit_entry[3]
+  PIN cam_hit_entry[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 952.000 0.000 952.600 ;
+    END
+  END cam_hit_entry[4]
+  PIN entry_match[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 956.000 0.000 956.600 ;
+    END
+  END entry_match[0]
+  PIN entry_match[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 960.000 0.000 960.600 ;
+    END
+  END entry_match[1]
+  PIN entry_match[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 964.000 0.000 964.600 ;
+    END
+  END entry_match[2]
+  PIN entry_match[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 968.000 0.000 968.600 ;
+    END
+  END entry_match[3]
+  PIN entry_match[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 972.000 0.000 972.600 ;
+    END
+  END entry_match[4]
+  PIN entry_match[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 976.000 0.000 976.600 ;
+    END
+  END entry_match[5]
+  PIN entry_match[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 980.000 0.000 980.600 ;
+    END
+  END entry_match[6]
+  PIN entry_match[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 984.000 0.000 984.600 ;
+    END
+  END entry_match[7]
+  PIN entry_match[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 988.000 0.000 988.600 ;
+    END
+  END entry_match[8]
+  PIN entry_match[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 992.000 0.000 992.600 ;
+    END
+  END entry_match[9]
+  PIN entry_match[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 996.000 0.000 996.600 ;
+    END
+  END entry_match[10]
+  PIN entry_match[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1000.000 0.000 1000.600 ;
+    END
+  END entry_match[11]
+  PIN entry_match[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1004.000 0.000 1004.600 ;
+    END
+  END entry_match[12]
+  PIN entry_match[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1008.000 0.000 1008.600 ;
+    END
+  END entry_match[13]
+  PIN entry_match[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1012.000 0.000 1012.600 ;
+    END
+  END entry_match[14]
+  PIN entry_match[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1016.000 0.000 1016.600 ;
+    END
+  END entry_match[15]
+  PIN entry_match[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1020.000 0.000 1020.600 ;
+    END
+  END entry_match[16]
+  PIN entry_match[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1024.000 0.000 1024.600 ;
+    END
+  END entry_match[17]
+  PIN entry_match[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1028.000 0.000 1028.600 ;
+    END
+  END entry_match[18]
+  PIN entry_match[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1032.000 0.000 1032.600 ;
+    END
+  END entry_match[19]
+  PIN entry_match[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1036.000 0.000 1036.600 ;
+    END
+  END entry_match[20]
+  PIN entry_match[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1040.000 0.000 1040.600 ;
+    END
+  END entry_match[21]
+  PIN entry_match[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1044.000 0.000 1044.600 ;
+    END
+  END entry_match[22]
+  PIN entry_match[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1048.000 0.000 1048.600 ;
+    END
+  END entry_match[23]
+  PIN entry_match[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1052.000 0.000 1052.600 ;
+    END
+  END entry_match[24]
+  PIN entry_match[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1056.000 0.000 1056.600 ;
+    END
+  END entry_match[25]
+  PIN entry_match[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1060.000 0.000 1060.600 ;
+    END
+  END entry_match[26]
+  PIN entry_match[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1064.000 0.000 1064.600 ;
+    END
+  END entry_match[27]
+  PIN entry_match[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1068.000 0.000 1068.600 ;
+    END
+  END entry_match[28]
+  PIN entry_match[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1072.000 0.000 1072.600 ;
+    END
+  END entry_match[29]
+  PIN entry_match[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1076.000 0.000 1076.600 ;
+    END
+  END entry_match[30]
+  PIN entry_match[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1080.000 0.000 1080.600 ;
+    END
+  END entry_match[31]
+  PIN entry_valid[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1084.000 0.000 1084.600 ;
+    END
+  END entry_valid[0]
+  PIN entry_valid[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1088.000 0.000 1088.600 ;
+    END
+  END entry_valid[1]
+  PIN entry_valid[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1092.000 0.000 1092.600 ;
+    END
+  END entry_valid[2]
+  PIN entry_valid[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1096.000 0.000 1096.600 ;
+    END
+  END entry_valid[3]
+  PIN entry_valid[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1100.000 0.000 1100.600 ;
+    END
+  END entry_valid[4]
+  PIN entry_valid[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1104.000 0.000 1104.600 ;
+    END
+  END entry_valid[5]
+  PIN entry_valid[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1108.000 0.000 1108.600 ;
+    END
+  END entry_valid[6]
+  PIN entry_valid[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1112.000 0.000 1112.600 ;
+    END
+  END entry_valid[7]
+  PIN entry_valid[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1116.000 0.000 1116.600 ;
+    END
+  END entry_valid[8]
+  PIN entry_valid[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1120.000 0.000 1120.600 ;
+    END
+  END entry_valid[9]
+  PIN entry_valid[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1124.000 0.000 1124.600 ;
+    END
+  END entry_valid[10]
+  PIN entry_valid[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1128.000 0.000 1128.600 ;
+    END
+  END entry_valid[11]
+  PIN entry_valid[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1132.000 0.000 1132.600 ;
+    END
+  END entry_valid[12]
+  PIN entry_valid[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1136.000 0.000 1136.600 ;
+    END
+  END entry_valid[13]
+  PIN entry_valid[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1140.000 0.000 1140.600 ;
+    END
+  END entry_valid[14]
+  PIN entry_valid[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1144.000 0.000 1144.600 ;
+    END
+  END entry_valid[15]
+  PIN entry_valid[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1148.000 0.000 1148.600 ;
+    END
+  END entry_valid[16]
+  PIN entry_valid[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1152.000 0.000 1152.600 ;
+    END
+  END entry_valid[17]
+  PIN entry_valid[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1156.000 0.000 1156.600 ;
+    END
+  END entry_valid[18]
+  PIN entry_valid[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1160.000 0.000 1160.600 ;
+    END
+  END entry_valid[19]
+  PIN entry_valid[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1164.000 0.000 1164.600 ;
+    END
+  END entry_valid[20]
+  PIN entry_valid[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1168.000 0.000 1168.600 ;
+    END
+  END entry_valid[21]
+  PIN entry_valid[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1172.000 0.000 1172.600 ;
+    END
+  END entry_valid[22]
+  PIN entry_valid[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1176.000 0.000 1176.600 ;
+    END
+  END entry_valid[23]
+  PIN entry_valid[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1180.000 0.000 1180.600 ;
+    END
+  END entry_valid[24]
+  PIN entry_valid[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1184.000 0.000 1184.600 ;
+    END
+  END entry_valid[25]
+  PIN entry_valid[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1188.000 0.000 1188.600 ;
+    END
+  END entry_valid[26]
+  PIN entry_valid[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1192.000 0.000 1192.600 ;
+    END
+  END entry_valid[27]
+  PIN entry_valid[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1196.000 0.000 1196.600 ;
+    END
+  END entry_valid[28]
+  PIN entry_valid[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1200.000 0.000 1200.600 ;
+    END
+  END entry_valid[29]
+  PIN entry_valid[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1204.000 0.000 1204.600 ;
+    END
+  END entry_valid[30]
+  PIN entry_valid[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1208.000 0.000 1208.600 ;
+    END
+  END entry_valid[31]
+  PIN rd_cam_data[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1212.000 0.000 1212.600 ;
+    END
+  END rd_cam_data[0]
+  PIN rd_cam_data[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1216.000 0.000 1216.600 ;
+    END
+  END rd_cam_data[1]
+  PIN rd_cam_data[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1220.000 0.000 1220.600 ;
+    END
+  END rd_cam_data[2]
+  PIN rd_cam_data[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1224.000 0.000 1224.600 ;
+    END
+  END rd_cam_data[3]
+  PIN rd_cam_data[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1228.000 0.000 1228.600 ;
+    END
+  END rd_cam_data[4]
+  PIN rd_cam_data[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1232.000 0.000 1232.600 ;
+    END
+  END rd_cam_data[5]
+  PIN rd_cam_data[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1236.000 0.000 1236.600 ;
+    END
+  END rd_cam_data[6]
+  PIN rd_cam_data[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1240.000 0.000 1240.600 ;
+    END
+  END rd_cam_data[7]
+  PIN rd_cam_data[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1244.000 0.000 1244.600 ;
+    END
+  END rd_cam_data[8]
+  PIN rd_cam_data[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1248.000 0.000 1248.600 ;
+    END
+  END rd_cam_data[9]
+  PIN rd_cam_data[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1252.000 0.000 1252.600 ;
+    END
+  END rd_cam_data[10]
+  PIN rd_cam_data[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1256.000 0.000 1256.600 ;
+    END
+  END rd_cam_data[11]
+  PIN rd_cam_data[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1260.000 0.000 1260.600 ;
+    END
+  END rd_cam_data[12]
+  PIN rd_cam_data[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1264.000 0.000 1264.600 ;
+    END
+  END rd_cam_data[13]
+  PIN rd_cam_data[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1268.000 0.000 1268.600 ;
+    END
+  END rd_cam_data[14]
+  PIN rd_cam_data[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1272.000 0.000 1272.600 ;
+    END
+  END rd_cam_data[15]
+  PIN rd_cam_data[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1276.000 0.000 1276.600 ;
+    END
+  END rd_cam_data[16]
+  PIN rd_cam_data[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1280.000 0.000 1280.600 ;
+    END
+  END rd_cam_data[17]
+  PIN rd_cam_data[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1284.000 0.000 1284.600 ;
+    END
+  END rd_cam_data[18]
+  PIN rd_cam_data[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1288.000 0.000 1288.600 ;
+    END
+  END rd_cam_data[19]
+  PIN rd_cam_data[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1292.000 0.000 1292.600 ;
+    END
+  END rd_cam_data[20]
+  PIN rd_cam_data[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1296.000 0.000 1296.600 ;
+    END
+  END rd_cam_data[21]
+  PIN rd_cam_data[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1300.000 0.000 1300.600 ;
+    END
+  END rd_cam_data[22]
+  PIN rd_cam_data[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1304.000 0.000 1304.600 ;
+    END
+  END rd_cam_data[23]
+  PIN rd_cam_data[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1308.000 0.000 1308.600 ;
+    END
+  END rd_cam_data[24]
+  PIN rd_cam_data[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1312.000 0.000 1312.600 ;
+    END
+  END rd_cam_data[25]
+  PIN rd_cam_data[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1316.000 0.000 1316.600 ;
+    END
+  END rd_cam_data[26]
+  PIN rd_cam_data[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1320.000 0.000 1320.600 ;
+    END
+  END rd_cam_data[27]
+  PIN rd_cam_data[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1324.000 0.000 1324.600 ;
+    END
+  END rd_cam_data[28]
+  PIN rd_cam_data[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1328.000 0.000 1328.600 ;
+    END
+  END rd_cam_data[29]
+  PIN rd_cam_data[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1332.000 0.000 1332.600 ;
+    END
+  END rd_cam_data[30]
+  PIN rd_cam_data[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1336.000 0.000 1336.600 ;
+    END
+  END rd_cam_data[31]
+  PIN rd_cam_data[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1340.000 0.000 1340.600 ;
+    END
+  END rd_cam_data[32]
+  PIN rd_cam_data[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1344.000 0.000 1344.600 ;
+    END
+  END rd_cam_data[33]
+  PIN rd_cam_data[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1348.000 0.000 1348.600 ;
+    END
+  END rd_cam_data[34]
+  PIN rd_cam_data[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1352.000 0.000 1352.600 ;
+    END
+  END rd_cam_data[35]
+  PIN rd_cam_data[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1356.000 0.000 1356.600 ;
+    END
+  END rd_cam_data[36]
+  PIN rd_cam_data[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1360.000 0.000 1360.600 ;
+    END
+  END rd_cam_data[37]
+  PIN rd_cam_data[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1364.000 0.000 1364.600 ;
+    END
+  END rd_cam_data[38]
+  PIN rd_cam_data[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1368.000 0.000 1368.600 ;
+    END
+  END rd_cam_data[39]
+  PIN rd_cam_data[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1372.000 0.000 1372.600 ;
+    END
+  END rd_cam_data[40]
+  PIN rd_cam_data[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1376.000 0.000 1376.600 ;
+    END
+  END rd_cam_data[41]
+  PIN rd_cam_data[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1380.000 0.000 1380.600 ;
+    END
+  END rd_cam_data[42]
+  PIN rd_cam_data[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1384.000 0.000 1384.600 ;
+    END
+  END rd_cam_data[43]
+  PIN rd_cam_data[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1388.000 0.000 1388.600 ;
+    END
+  END rd_cam_data[44]
+  PIN rd_cam_data[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1392.000 0.000 1392.600 ;
+    END
+  END rd_cam_data[45]
+  PIN rd_cam_data[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1396.000 0.000 1396.600 ;
+    END
+  END rd_cam_data[46]
+  PIN rd_cam_data[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1400.000 0.000 1400.600 ;
+    END
+  END rd_cam_data[47]
+  PIN rd_cam_data[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1404.000 0.000 1404.600 ;
+    END
+  END rd_cam_data[48]
+  PIN rd_cam_data[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1408.000 0.000 1408.600 ;
+    END
+  END rd_cam_data[49]
+  PIN rd_cam_data[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1412.000 0.000 1412.600 ;
+    END
+  END rd_cam_data[50]
+  PIN rd_cam_data[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1416.000 0.000 1416.600 ;
+    END
+  END rd_cam_data[51]
+  PIN rd_cam_data[52]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1420.000 0.000 1420.600 ;
+    END
+  END rd_cam_data[52]
+  PIN rd_cam_data[53]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1424.000 0.000 1424.600 ;
+    END
+  END rd_cam_data[53]
+  PIN rd_cam_data[54]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1428.000 0.000 1428.600 ;
+    END
+  END rd_cam_data[54]
+  PIN rd_cam_data[55]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1432.000 0.000 1432.600 ;
+    END
+  END rd_cam_data[55]
+  PIN rd_cam_data[56]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1436.000 0.000 1436.600 ;
+    END
+  END rd_cam_data[56]
+  PIN rd_cam_data[57]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1440.000 0.000 1440.600 ;
+    END
+  END rd_cam_data[57]
+  PIN rd_cam_data[58]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1444.000 0.000 1444.600 ;
+    END
+  END rd_cam_data[58]
+  PIN rd_cam_data[59]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1448.000 0.000 1448.600 ;
+    END
+  END rd_cam_data[59]
+  PIN rd_cam_data[60]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1452.000 0.000 1452.600 ;
+    END
+  END rd_cam_data[60]
+  PIN rd_cam_data[61]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1456.000 0.000 1456.600 ;
+    END
+  END rd_cam_data[61]
+  PIN rd_cam_data[62]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1460.000 0.000 1460.600 ;
+    END
+  END rd_cam_data[62]
+  PIN rd_cam_data[63]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1464.000 0.000 1464.600 ;
+    END
+  END rd_cam_data[63]
+  PIN rd_cam_data[64]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1468.000 0.000 1468.600 ;
+    END
+  END rd_cam_data[64]
+  PIN rd_cam_data[65]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1472.000 0.000 1472.600 ;
+    END
+  END rd_cam_data[65]
+  PIN rd_cam_data[66]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1476.000 0.000 1476.600 ;
+    END
+  END rd_cam_data[66]
+  PIN rd_cam_data[67]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1480.000 0.000 1480.600 ;
+    END
+  END rd_cam_data[67]
+  PIN rd_cam_data[68]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1484.000 0.000 1484.600 ;
+    END
+  END rd_cam_data[68]
+  PIN rd_cam_data[69]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1488.000 0.000 1488.600 ;
+    END
+  END rd_cam_data[69]
+  PIN rd_cam_data[70]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1492.000 0.000 1492.600 ;
+    END
+  END rd_cam_data[70]
+  PIN rd_cam_data[71]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1496.000 0.000 1496.600 ;
+    END
+  END rd_cam_data[71]
+  PIN rd_cam_data[72]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1500.000 0.000 1500.600 ;
+    END
+  END rd_cam_data[72]
+  PIN rd_cam_data[73]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1504.000 0.000 1504.600 ;
+    END
+  END rd_cam_data[73]
+  PIN rd_cam_data[74]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1508.000 0.000 1508.600 ;
+    END
+  END rd_cam_data[74]
+  PIN rd_cam_data[75]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1512.000 0.000 1512.600 ;
+    END
+  END rd_cam_data[75]
+  PIN rd_cam_data[76]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1516.000 0.000 1516.600 ;
+    END
+  END rd_cam_data[76]
+  PIN rd_cam_data[77]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1520.000 0.000 1520.600 ;
+    END
+  END rd_cam_data[77]
+  PIN rd_cam_data[78]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1524.000 0.000 1524.600 ;
+    END
+  END rd_cam_data[78]
+  PIN rd_cam_data[79]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1528.000 0.000 1528.600 ;
+    END
+  END rd_cam_data[79]
+  PIN rd_cam_data[80]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1532.000 0.000 1532.600 ;
+    END
+  END rd_cam_data[80]
+  PIN rd_cam_data[81]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1536.000 0.000 1536.600 ;
+    END
+  END rd_cam_data[81]
+  PIN rd_cam_data[82]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1540.000 0.000 1540.600 ;
+    END
+  END rd_cam_data[82]
+  PIN rd_cam_data[83]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1544.000 0.000 1544.600 ;
+    END
+  END rd_cam_data[83]
+  PIN bypass_mux_enab_np1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1152.000 504.000 1152.600 ;
+    END
+  END bypass_mux_enab_np1
+  PIN bypass_attr_np1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1156.000 504.000 1156.600 ;
+    END
+  END bypass_attr_np1[0]
+  PIN bypass_attr_np1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1160.000 504.000 1160.600 ;
+    END
+  END bypass_attr_np1[1]
+  PIN bypass_attr_np1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1164.000 504.000 1164.600 ;
+    END
+  END bypass_attr_np1[2]
+  PIN bypass_attr_np1[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1168.000 504.000 1168.600 ;
+    END
+  END bypass_attr_np1[3]
+  PIN bypass_attr_np1[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1172.000 504.000 1172.600 ;
+    END
+  END bypass_attr_np1[4]
+  PIN bypass_attr_np1[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1176.000 504.000 1176.600 ;
+    END
+  END bypass_attr_np1[5]
+  PIN bypass_attr_np1[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1180.000 504.000 1180.600 ;
+    END
+  END bypass_attr_np1[6]
+  PIN bypass_attr_np1[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1184.000 504.000 1184.600 ;
+    END
+  END bypass_attr_np1[7]
+  PIN bypass_attr_np1[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1188.000 504.000 1188.600 ;
+    END
+  END bypass_attr_np1[8]
+  PIN bypass_attr_np1[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1192.000 504.000 1192.600 ;
+    END
+  END bypass_attr_np1[9]
+  PIN bypass_attr_np1[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1196.000 504.000 1196.600 ;
+    END
+  END bypass_attr_np1[10]
+  PIN bypass_attr_np1[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1200.000 504.000 1200.600 ;
+    END
+  END bypass_attr_np1[11]
+  PIN bypass_attr_np1[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1204.000 504.000 1204.600 ;
+    END
+  END bypass_attr_np1[12]
+  PIN bypass_attr_np1[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1208.000 504.000 1208.600 ;
+    END
+  END bypass_attr_np1[13]
+  PIN bypass_attr_np1[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1212.000 504.000 1212.600 ;
+    END
+  END bypass_attr_np1[14]
+  PIN bypass_attr_np1[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1216.000 504.000 1216.600 ;
+    END
+  END bypass_attr_np1[15]
+  PIN bypass_attr_np1[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1220.000 504.000 1220.600 ;
+    END
+  END bypass_attr_np1[16]
+  PIN bypass_attr_np1[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1224.000 504.000 1224.600 ;
+    END
+  END bypass_attr_np1[17]
+  PIN bypass_attr_np1[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1228.000 504.000 1228.600 ;
+    END
+  END bypass_attr_np1[18]
+  PIN bypass_attr_np1[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1232.000 504.000 1232.600 ;
+    END
+  END bypass_attr_np1[19]
+  PIN bypass_attr_np1[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 500.000 1236.000 504.000 1236.600 ;
+    END
+  END bypass_attr_np1[20]
+  PIN attr_np2[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1548.000 0.000 1548.600 ;
+    END
+  END attr_np2[0]
+  PIN attr_np2[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1552.000 0.000 1552.600 ;
+    END
+  END attr_np2[1]
+  PIN attr_np2[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1556.000 0.000 1556.600 ;
+    END
+  END attr_np2[2]
+  PIN attr_np2[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1560.000 0.000 1560.600 ;
+    END
+  END attr_np2[3]
+  PIN attr_np2[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1564.000 0.000 1564.600 ;
+    END
+  END attr_np2[4]
+  PIN attr_np2[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1568.000 0.000 1568.600 ;
+    END
+  END attr_np2[5]
+  PIN attr_np2[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1572.000 0.000 1572.600 ;
+    END
+  END attr_np2[6]
+  PIN attr_np2[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1576.000 0.000 1576.600 ;
+    END
+  END attr_np2[7]
+  PIN attr_np2[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1580.000 0.000 1580.600 ;
+    END
+  END attr_np2[8]
+  PIN attr_np2[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1584.000 0.000 1584.600 ;
+    END
+  END attr_np2[9]
+  PIN attr_np2[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1588.000 0.000 1588.600 ;
+    END
+  END attr_np2[10]
+  PIN attr_np2[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1592.000 0.000 1592.600 ;
+    END
+  END attr_np2[11]
+  PIN attr_np2[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1596.000 0.000 1596.600 ;
+    END
+  END attr_np2[12]
+  PIN attr_np2[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1600.000 0.000 1600.600 ;
+    END
+  END attr_np2[13]
+  PIN attr_np2[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1604.000 0.000 1604.600 ;
+    END
+  END attr_np2[14]
+  PIN attr_np2[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1608.000 0.000 1608.600 ;
+    END
+  END attr_np2[15]
+  PIN attr_np2[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1612.000 0.000 1612.600 ;
+    END
+  END attr_np2[16]
+  PIN attr_np2[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1616.000 0.000 1616.600 ;
+    END
+  END attr_np2[17]
+  PIN attr_np2[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1620.000 0.000 1620.600 ;
+    END
+  END attr_np2[18]
+  PIN attr_np2[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1624.000 0.000 1624.600 ;
+    END
+  END attr_np2[19]
+  PIN attr_np2[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1628.000 0.000 1628.600 ;
+    END
+  END attr_np2[20]
+  PIN rpn_np2[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1632.000 0.000 1632.600 ;
+    END
+  END rpn_np2[22]
+  PIN rpn_np2[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1636.000 0.000 1636.600 ;
+    END
+  END rpn_np2[23]
+  PIN rpn_np2[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1640.000 0.000 1640.600 ;
+    END
+  END rpn_np2[24]
+  PIN rpn_np2[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1644.000 0.000 1644.600 ;
+    END
+  END rpn_np2[25]
+  PIN rpn_np2[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1648.000 0.000 1648.600 ;
+    END
+  END rpn_np2[26]
+  PIN rpn_np2[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1652.000 0.000 1652.600 ;
+    END
+  END rpn_np2[27]
+  PIN rpn_np2[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1656.000 0.000 1656.600 ;
+    END
+  END rpn_np2[28]
+  PIN rpn_np2[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1660.000 0.000 1660.600 ;
+    END
+  END rpn_np2[29]
+  PIN rpn_np2[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1664.000 0.000 1664.600 ;
+    END
+  END rpn_np2[30]
+  PIN rpn_np2[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1668.000 0.000 1668.600 ;
+    END
+  END rpn_np2[31]
+  PIN rpn_np2[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1672.000 0.000 1672.600 ;
+    END
+  END rpn_np2[32]
+  PIN rpn_np2[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1676.000 0.000 1676.600 ;
+    END
+  END rpn_np2[33]
+  PIN rpn_np2[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1680.000 0.000 1680.600 ;
+    END
+  END rpn_np2[34]
+  PIN rpn_np2[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1684.000 0.000 1684.600 ;
+    END
+  END rpn_np2[35]
+  PIN rpn_np2[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1688.000 0.000 1688.600 ;
+    END
+  END rpn_np2[36]
+  PIN rpn_np2[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1692.000 0.000 1692.600 ;
+    END
+  END rpn_np2[37]
+  PIN rpn_np2[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1696.000 0.000 1696.600 ;
+    END
+  END rpn_np2[38]
+  PIN rpn_np2[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1700.000 0.000 1700.600 ;
+    END
+  END rpn_np2[39]
+  PIN rpn_np2[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1704.000 0.000 1704.600 ;
+    END
+  END rpn_np2[40]
+  PIN rpn_np2[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1708.000 0.000 1708.600 ;
+    END
+  END rpn_np2[41]
+  PIN rpn_np2[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1712.000 0.000 1712.600 ;
+    END
+  END rpn_np2[42]
+  PIN rpn_np2[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1716.000 0.000 1716.600 ;
+    END
+  END rpn_np2[43]
+  PIN rpn_np2[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1720.000 0.000 1720.600 ;
+    END
+  END rpn_np2[44]
+  PIN rpn_np2[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1724.000 0.000 1724.600 ;
+    END
+  END rpn_np2[45]
+  PIN rpn_np2[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1728.000 0.000 1728.600 ;
+    END
+  END rpn_np2[46]
+  PIN rpn_np2[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1732.000 0.000 1732.600 ;
+    END
+  END rpn_np2[47]
+  PIN rpn_np2[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1736.000 0.000 1736.600 ;
+    END
+  END rpn_np2[48]
+  PIN rpn_np2[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1740.000 0.000 1740.600 ;
+    END
+  END rpn_np2[49]
+  PIN rpn_np2[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1744.000 0.000 1744.600 ;
+    END
+  END rpn_np2[50]
+  PIN rpn_np2[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 1748.000 0.000 1748.600 ;
+    END
+  END rpn_np2[51]
+END tri_cam_32x143_1r1w1c
+END LIBRARY
+
