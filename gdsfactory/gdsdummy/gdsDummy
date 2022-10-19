@@ -1,11 +1,20 @@
 #!/usr/bin/python3
 
+# config for each tech:
+#   self.compLayer = (235,4)
+#   PortLayers = {'met1':(68,16), 'met2':(69,16), 'met3':(70,16), 'met4':(71,16), 'met5':(72,16)}
+
+# parse_verilog needs to capture the parameters; then gen_verilog
+#  can add them to the empty wrapper
+
 from datetime import datetime
 from enum import IntEnum
 import re
 import pprint
 import gdsfactory as gf
 import sky130 as pdk
+
+verbose = False
 
 class Dir(IntEnum):
    I = 0
@@ -26,9 +35,12 @@ class Pin():
       self.name = name
       self.direction = direction
       self.bits = bits
-      self.polygon = [None] * bits
+
       if bit_from is None:
          self.bus = False
+         self.bit_from = 0
+         self.bit_to = 0
+         self.polygon = [None]
       else:
          self.bus = True
          self.bit_from = bit_from
@@ -36,12 +48,31 @@ class Pin():
             raise(Exception)
          else:
             self.bit_to = bit_to
+         self.downto = self.bit_from > self.bit_to
+         self.polygon = [None] * (max(bit_from, bit_to) + 1)         # worst-case 0:n
+
       if not isinstance(position, tuple):
          self.edge = position
          self.placement = -1
       else:
          self.edge = position[0]
          self.placement = position[1]
+
+   # non-bus has 1 iteration, 'strand'=0
+   def __iter__(self):
+      self.n = self.bit_from
+      return self
+
+   def __next__(self):
+      if self.n == None:
+         raise StopIteration
+      else:
+         res = self.n
+         if self.n == self.bit_to:
+            self.n = None
+         else:
+            self.n = self.n + (-1 if self.downto else 1)
+         return res
 
    def add_polygon(self, pin, strand, coords, **kwargs):
       #wtf polygon should be (coords,layer) at least
@@ -56,10 +87,10 @@ class Pin():
 
 class GDSDummy():
 
-   Pwr = {'VDD': True, 'VCS': True, 'GND': True, 'GD': True, 'vdd': True, 'vcs': True, 'gnd': True, 'gd': True}
-   PortLayers = {68: 'met1', 69: 'met2', 70: 'met3', 71: 'met4', 72: 'met5'}
+   PortLayers = {}
 
    def __init__(self, name, size):
+      self.sigsPwr = {'VDD': True, 'VCS': True, 'GND': True, 'GD': True, 'vdd': True, 'vcs': True, 'gnd': True, 'gd': True}
       self.name = name
       self.size = size
       self.width = size[0]
@@ -88,21 +119,17 @@ class GDSDummy():
       def top(width, height):
          c = gf.Component(self.name)
          c.add_polygon(
-            [(0, 0), (0, height), (width, height), (width, 0)], layer=self.compLayer
+            [self.origin, (self.origin[0], height), (width, height), (width, self.origin[1])], layer=self.compLayer
          )
          for p in self.pins:
 
-            for i in range(p.bits):
+            for strand in iter(p):
 
                if p.bus:
-                  if p.bit_from >= p.bit_to:
-                     strand = p.bit_from - i
-                  else:
-                     strand = p.bit_from + i
                   name = f'{p.name}[{strand}]'
                else:
-                  strand = None
                   name = p.name
+                  strand = None
 
                pin = gf.Component(name)
                lastPlacement = lastPin[p.edge]
@@ -130,7 +157,7 @@ class GDSDummy():
                   y = self.yOffset + placement * self.pinSpacing
                   orientation = 0
 
-               #print(f'{name} {p.edge}/{p.placement} {x},{y}')
+               if verbose: print(f'{name} {p.edge}/{p.placement} {x},{y}')
                if orientation == 90:
                   p.add_polygon(pin, strand,
                      [(x, y), (x, y + self.pinWidth), (x + self.pinHeight, y + self.pinWidth), (x + self.pinHeight, y)], layer=self.pinLayer
@@ -185,11 +212,14 @@ class GDSDummy():
       text += f'  SIZE {self.size[0]:.3f} BY {self.size[1]:.3f} ;\n'
 
       for p in self.pins:
-         for i in range(p.bits):
+
+         for strand in iter(p):
+
             if p.bus:
-               name = f'{p.name}[{i}]'
+               name = f'{p.name}[{strand}]'
             else:
                name = p.name
+
             text += f'  PIN {name}\n'
             if p.direction == Dir.I:
                text += f'    DIRECTION INPUT ;\n'
@@ -202,21 +232,20 @@ class GDSDummy():
                text += f'    USE SIGNAL ;\n'
             elif p.direction == Dir.PWR:
                text += f'    DIRECTION INOUT ;\n'
-# getting this - do you need to add attr for power, gnd inouts???
+# getting this for xu - do you need to add attr for power, gnd inouts???
 #[ERROR DRT-0307] Net xu0.pop.byte_gen\[0\].bytes.csa_l0_0.gd of signal type SIGNAL cannot be connected to iterm xu0.mult/gnd with signal type POWER
 #               text += f'    USE POWER ;\n'
 # or need to get vd,gd out of all triblib unused sig assigns?
                text += f'    USE SIGNAL ;\n'
             else:
                raise(Exception(p))
-
             text += f'    PORT\n'
             text += f'      LAYER met3 ;\n'   # should look up based on layer
-            text += f'        RECT {p.polygon[i][0]:.3f} {p.polygon[i][1]:.3f} {p.polygon[i][2]:.3f} {p.polygon[i][3]:.3f} ;\n'
+            text += f'        RECT {p.polygon[strand][0]:.3f} {p.polygon[strand][1]:.3f} {p.polygon[strand][2]:.3f} {p.polygon[strand][3]:.3f} ;\n'
             text += f'    END\n'
             text += f'  END {name}\n'
 
-      # add obs section for boundary rect?
+      # add obs section for boundary rect and/or blockages?
       text += f'END {self.name}\n'
       text += f'END LIBRARY\n\n'
       f = open(f'{self.name}.lef', 'w')
@@ -262,24 +291,30 @@ class GDSDummy():
       ios = ios.split(',')
       for io in ios:
          io = io.translate(str.maketrans('', '', ' \n\t\r'))
-         m = re.search('\s*(input)*(output)*(inout)*(.*)', io)
-         if m.group(1) is None and m.group(2) is None and m.group(3) is None:
-            m = re.search(f'\s*(input)\s+(.*){io}', text)
+
+         # check module stmt
+         m = re.search('\s*(input)\s*(\[.*\])*\s+(.*)', io)
+         m = m or re.search('\s*(output)\s*(\[.*\])*\s+(.*)', io)
+         m = m or re.search('\s*(inout)\s*(\[.*\])*\s+(.*)', io)
+
+         # check again
+         if m is None:
+            m = re.search(f'\s*(input)\s*(\[.*\])*\s+{io}', text)
+            m = m or re.search(f'\s*(output)\s*(\[.*\])*\s+{io}', text)
+            m = m or re.search(f'\s*(inout)\s*(\[.*\])*\s+{io}', text)
             if m is None:
-               m = re.search(f'\s*(output)\s+(.*){io}', text)
-            if m is None:
-               m = re.search(f'\s*(inout)\s+(.*){io}', text)
+               raise Exception(io)
+
          if m.group(1) == 'input':
             direction = Dir.I
          elif m.group(1) == 'output':
             direction = Dir.O
          elif m.group(1) == 'inout':
-            if io in GDSDummy.Pwr:
+            if io in self.sigsPwr:
                direction = Dir.PWR
             else:
                direction = Dir.IO
-         else:
-            direction = Dir.X
+
          bits = m.group(2)
          bit_from = None
          bit_to = None
@@ -348,31 +383,25 @@ network_latency_included options cannot be used with -reference_pin.
          if p.name in skip:
             continue
 
-         if p.bus:
-            if p.bit_from < p.bit_to:
-               a = p.bit_from
-               b = p.bit_to
+         for strand in iter(p):
+
+            if p.bus:
+               name = f'{p.name}[{strand}]'
             else:
-               a = p.bit_to
-               b = p.bit_from
-            for b in range(a, b + 1):
-               if p.direction == Dir.I:
-                  textIns += f'set_input_delay -clock {clock} {idelay} {{{comp}/{p.name}[{b}]}}\n'
-               elif p.direction == Dir.O:
-                  textOuts += f'set_output_delay -clock {clock} {odelay} {{{comp}/{p.name}[{b}]}}\n'
-         else:
+               name = p.name
+
             if p.direction == Dir.I:
-               textIns += f'set_input_delay -clock {clock} {idelay} {{{comp}/{p.name}}}\n'
+               textIns += f'set_input_delay -clock {clock} {idelay} {{{comp}/{name}}}\n'
             elif p.direction == Dir.O:
-               textOuts += f'set_output_delay -clock {clock} {odelay} {{{comp}/{p.name}}}\n'
+               textOuts += f'set_output_delay -clock {clock} {odelay} {{{comp}/{name}}}\n'
 
       text += '\n# inputs\n'
       text += textIns
       text += '\n# outputs\n'
       text += textOuts
-      f = open(f'{self.name}.xdc', 'w')
+      f = open(f'{self.name}.sdc', 'w')
       f.write(text)
-      print(f'Created {self.name}.xdc')
+      print(f'Created {self.name}.sdc')
 
    def __repr__(self):
       return pprint.pformat(vars(self), indent=4, width=1)
@@ -434,8 +463,27 @@ if __name__ == '__main__':
    def bitCB(bit):
       bit = bit.replace('`GPR_WIDTH', '64')
       bit = bit.replace('`THREADS', '1')
+      bit = bit.replace('ADDRESSBUS_WIDTH', '6')  # tri_cpl_arr
+      bit = bit.replace('PORT_BITWIDTH', '143')   # tri_cpl_arr
+      bit = bit.replace('NUM_ENTRY_LOG2', '4')    # tri_cam_16x143
+      bit = bit.replace('NUM_ENTRY', '16')        # tri_cam_16x143
+      bit = bit.replace('ARRAY_DATA_WIDTH', '68') # tri_cam_16x143
+      bit = bit.replace('CAM_DATA_WIDTH', '84')   # tri_cam_16x143
+      bit = bit.replace('addressbus_width', '9')  # tri_512x162_4w_0
+      bit = bit.replace('ways', '4')              # tri_512x162_4w_0
+      bit = bit.replace('port_bitwidth', '162')   # tri_512x162_4w_0
+
       bit = eval(bit)
       return int(bit)
+
+   def bitCB2(bit):
+      bit = bit.replace('addressbus_width', '9') # tri_128x34_4w_1r1w
+      bit = bit.replace('ways', '4')             # tri_128x34_4w_1r1w
+      bit = bit.replace('port_bitwidth', '34')   # tri_128x34_4w_1r1w
+
+      bit = eval(bit)
+      return int(bit)
+
 
    ios = ra.parse_verilog('verilog/trilib/tri_64x72_1r1w.v', bitCB)
    ra = GDSDummy('tri_64x72_1r1w', (250, 750))
@@ -446,10 +494,9 @@ if __name__ == '__main__':
    ra.gen_gds()
    ra.gen_lef()
 
-   # *********************** now cuz i need it
+   # *********************** now cuz i need them
 
    ios = ra.parse_verilog('verilog/trilib/tri_st_mult.v', bitCB)
-
    ra = GDSDummy('tri_st_mult', (250, 750))
    for p in ios:
       ra.add_pin(p)
@@ -458,6 +505,75 @@ if __name__ == '__main__':
    ra.gen_gds()
    ra.gen_lef()
    ra.gen_constraints('xu0.mult', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
-   # gen_lib() when used for timing (will use fake target timings)
+
+   ios = ra.parse_verilog('verilog/trilib/tri_fu_mul.v', bitCB)
+   ra = GDSDummy('tri_fu_mul', (250, 900))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('fu.fmul', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+   ios = ra.parse_verilog('verilog/trilib/tri_512x16_1r1w_1.v', bitCB)
+   ra = GDSDummy('tri_512x16_1r1w_1', (100, 500))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('iuq.bht2', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+   ios = ra.parse_verilog('verilog/trilib/tri_iuq_cpl_arr.v', bitCB)
+   ra = GDSDummy('tri_iuq_cpl_arr', (400, 1400))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('iuq_cpl', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+   ios = ra.parse_verilog('verilog/trilib/tri_cam_16x143_1r1w1c.v', bitCB)
+   ra = GDSDummy('tri_cam_16x143_1r1w1c', (500, 1700))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('iuq_ic_erat.ierat_cam', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+
+   ios = ra.parse_verilog('verilog/trilib/tri_512x162_4w_0.v', bitCB)
+   ra = GDSDummy('tri_512x162_4w_0', (400, 3000))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('iuq_ic_dir.idata', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+   ios = ra.parse_verilog('verilog/trilib/tri_128x34_4w_1r1w.v', bitCB2)
+   ra = GDSDummy('tri_128x34_4w_1r1w', (400, 1000))
+   for p in ios:
+      ra.add_pin(p)
+
+   ra.gen_verilog()
+   ra.gen_gds()
+   ra.gen_lef()
+   ra.gen_constraints('iuq_ic_dir.idir', 'clk', '[expr $clk_period*.9]', '[expr $clk_period*.1]')
+
+
+
+
+
+
+
+   # gen_lib() when used for timing
    # gen io constraints if they are used for timing and if you can put on internal nets
+
 

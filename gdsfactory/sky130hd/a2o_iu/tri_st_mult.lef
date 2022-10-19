@@ -1,0 +1,1964 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO tri_st_mult
+  CLASS BLOCK ;
+  FOREIGN tri_st_mult ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 250.000 BY 750.000 ;
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 4.000 254.000 4.600 ;
+    END
+  END clk
+  PIN rst
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 8.000 254.000 8.600 ;
+    END
+  END rst
+  PIN vdd
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 4.000 0.000 4.600 ;
+    END
+  END vdd
+  PIN gnd
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 8.000 0.000 8.600 ;
+    END
+  END gnd
+  PIN d_mode_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 12.000 254.000 12.600 ;
+    END
+  END d_mode_dc
+  PIN delay_lclkr_dc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 16.000 254.000 16.600 ;
+    END
+  END delay_lclkr_dc
+  PIN mpw1_dc_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 20.000 254.000 20.600 ;
+    END
+  END mpw1_dc_b
+  PIN mpw2_dc_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 24.000 254.000 24.600 ;
+    END
+  END mpw2_dc_b
+  PIN func_sl_force
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 28.000 254.000 28.600 ;
+    END
+  END func_sl_force
+  PIN func_sl_thold_0_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 32.000 254.000 32.600 ;
+    END
+  END func_sl_thold_0_b
+  PIN sg_0
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 36.000 254.000 36.600 ;
+    END
+  END sg_0
+  PIN scan_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 40.000 254.000 40.600 ;
+    END
+  END scan_in
+  PIN scan_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 12.000 0.000 12.600 ;
+    END
+  END scan_out
+  PIN dec_mul_ex1_mul_recform
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 44.000 254.000 44.600 ;
+    END
+  END dec_mul_ex1_mul_recform
+  PIN dec_mul_ex1_mul_val[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 48.000 254.000 48.600 ;
+    END
+  END dec_mul_ex1_mul_val[0]
+  PIN dec_mul_ex1_mul_ord
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 52.000 254.000 52.600 ;
+    END
+  END dec_mul_ex1_mul_ord
+  PIN dec_mul_ex1_mul_ret
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 56.000 254.000 56.600 ;
+    END
+  END dec_mul_ex1_mul_ret
+  PIN dec_mul_ex1_mul_sign
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 60.000 254.000 60.600 ;
+    END
+  END dec_mul_ex1_mul_sign
+  PIN dec_mul_ex1_mul_size
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 64.000 254.000 64.600 ;
+    END
+  END dec_mul_ex1_mul_size
+  PIN dec_mul_ex1_mul_imm
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 68.000 254.000 68.600 ;
+    END
+  END dec_mul_ex1_mul_imm
+  PIN dec_mul_ex1_xer_ov_update
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 72.000 254.000 72.600 ;
+    END
+  END dec_mul_ex1_xer_ov_update
+  PIN cp_flush[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 76.000 254.000 76.600 ;
+    END
+  END cp_flush[0]
+  PIN ex1_spr_msr_cm
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 80.000 254.000 80.600 ;
+    END
+  END ex1_spr_msr_cm
+  PIN byp_mul_ex2_rs1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 84.000 254.000 84.600 ;
+    END
+  END byp_mul_ex2_rs1[0]
+  PIN byp_mul_ex2_rs1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 88.000 254.000 88.600 ;
+    END
+  END byp_mul_ex2_rs1[1]
+  PIN byp_mul_ex2_rs1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 92.000 254.000 92.600 ;
+    END
+  END byp_mul_ex2_rs1[2]
+  PIN byp_mul_ex2_rs1[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 96.000 254.000 96.600 ;
+    END
+  END byp_mul_ex2_rs1[3]
+  PIN byp_mul_ex2_rs1[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 100.000 254.000 100.600 ;
+    END
+  END byp_mul_ex2_rs1[4]
+  PIN byp_mul_ex2_rs1[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 104.000 254.000 104.600 ;
+    END
+  END byp_mul_ex2_rs1[5]
+  PIN byp_mul_ex2_rs1[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 108.000 254.000 108.600 ;
+    END
+  END byp_mul_ex2_rs1[6]
+  PIN byp_mul_ex2_rs1[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 112.000 254.000 112.600 ;
+    END
+  END byp_mul_ex2_rs1[7]
+  PIN byp_mul_ex2_rs1[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 116.000 254.000 116.600 ;
+    END
+  END byp_mul_ex2_rs1[8]
+  PIN byp_mul_ex2_rs1[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 120.000 254.000 120.600 ;
+    END
+  END byp_mul_ex2_rs1[9]
+  PIN byp_mul_ex2_rs1[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 124.000 254.000 124.600 ;
+    END
+  END byp_mul_ex2_rs1[10]
+  PIN byp_mul_ex2_rs1[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 128.000 254.000 128.600 ;
+    END
+  END byp_mul_ex2_rs1[11]
+  PIN byp_mul_ex2_rs1[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 132.000 254.000 132.600 ;
+    END
+  END byp_mul_ex2_rs1[12]
+  PIN byp_mul_ex2_rs1[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 136.000 254.000 136.600 ;
+    END
+  END byp_mul_ex2_rs1[13]
+  PIN byp_mul_ex2_rs1[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 140.000 254.000 140.600 ;
+    END
+  END byp_mul_ex2_rs1[14]
+  PIN byp_mul_ex2_rs1[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 144.000 254.000 144.600 ;
+    END
+  END byp_mul_ex2_rs1[15]
+  PIN byp_mul_ex2_rs1[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 148.000 254.000 148.600 ;
+    END
+  END byp_mul_ex2_rs1[16]
+  PIN byp_mul_ex2_rs1[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 152.000 254.000 152.600 ;
+    END
+  END byp_mul_ex2_rs1[17]
+  PIN byp_mul_ex2_rs1[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 156.000 254.000 156.600 ;
+    END
+  END byp_mul_ex2_rs1[18]
+  PIN byp_mul_ex2_rs1[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 160.000 254.000 160.600 ;
+    END
+  END byp_mul_ex2_rs1[19]
+  PIN byp_mul_ex2_rs1[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 164.000 254.000 164.600 ;
+    END
+  END byp_mul_ex2_rs1[20]
+  PIN byp_mul_ex2_rs1[21]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 168.000 254.000 168.600 ;
+    END
+  END byp_mul_ex2_rs1[21]
+  PIN byp_mul_ex2_rs1[22]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 172.000 254.000 172.600 ;
+    END
+  END byp_mul_ex2_rs1[22]
+  PIN byp_mul_ex2_rs1[23]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 176.000 254.000 176.600 ;
+    END
+  END byp_mul_ex2_rs1[23]
+  PIN byp_mul_ex2_rs1[24]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 180.000 254.000 180.600 ;
+    END
+  END byp_mul_ex2_rs1[24]
+  PIN byp_mul_ex2_rs1[25]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 184.000 254.000 184.600 ;
+    END
+  END byp_mul_ex2_rs1[25]
+  PIN byp_mul_ex2_rs1[26]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 188.000 254.000 188.600 ;
+    END
+  END byp_mul_ex2_rs1[26]
+  PIN byp_mul_ex2_rs1[27]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 192.000 254.000 192.600 ;
+    END
+  END byp_mul_ex2_rs1[27]
+  PIN byp_mul_ex2_rs1[28]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 196.000 254.000 196.600 ;
+    END
+  END byp_mul_ex2_rs1[28]
+  PIN byp_mul_ex2_rs1[29]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 200.000 254.000 200.600 ;
+    END
+  END byp_mul_ex2_rs1[29]
+  PIN byp_mul_ex2_rs1[30]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 204.000 254.000 204.600 ;
+    END
+  END byp_mul_ex2_rs1[30]
+  PIN byp_mul_ex2_rs1[31]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 208.000 254.000 208.600 ;
+    END
+  END byp_mul_ex2_rs1[31]
+  PIN byp_mul_ex2_rs1[32]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 212.000 254.000 212.600 ;
+    END
+  END byp_mul_ex2_rs1[32]
+  PIN byp_mul_ex2_rs1[33]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 216.000 254.000 216.600 ;
+    END
+  END byp_mul_ex2_rs1[33]
+  PIN byp_mul_ex2_rs1[34]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 220.000 254.000 220.600 ;
+    END
+  END byp_mul_ex2_rs1[34]
+  PIN byp_mul_ex2_rs1[35]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 224.000 254.000 224.600 ;
+    END
+  END byp_mul_ex2_rs1[35]
+  PIN byp_mul_ex2_rs1[36]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 228.000 254.000 228.600 ;
+    END
+  END byp_mul_ex2_rs1[36]
+  PIN byp_mul_ex2_rs1[37]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 232.000 254.000 232.600 ;
+    END
+  END byp_mul_ex2_rs1[37]
+  PIN byp_mul_ex2_rs1[38]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 236.000 254.000 236.600 ;
+    END
+  END byp_mul_ex2_rs1[38]
+  PIN byp_mul_ex2_rs1[39]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 240.000 254.000 240.600 ;
+    END
+  END byp_mul_ex2_rs1[39]
+  PIN byp_mul_ex2_rs1[40]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 244.000 254.000 244.600 ;
+    END
+  END byp_mul_ex2_rs1[40]
+  PIN byp_mul_ex2_rs1[41]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 248.000 254.000 248.600 ;
+    END
+  END byp_mul_ex2_rs1[41]
+  PIN byp_mul_ex2_rs1[42]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 252.000 254.000 252.600 ;
+    END
+  END byp_mul_ex2_rs1[42]
+  PIN byp_mul_ex2_rs1[43]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 256.000 254.000 256.600 ;
+    END
+  END byp_mul_ex2_rs1[43]
+  PIN byp_mul_ex2_rs1[44]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 260.000 254.000 260.600 ;
+    END
+  END byp_mul_ex2_rs1[44]
+  PIN byp_mul_ex2_rs1[45]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 264.000 254.000 264.600 ;
+    END
+  END byp_mul_ex2_rs1[45]
+  PIN byp_mul_ex2_rs1[46]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 268.000 254.000 268.600 ;
+    END
+  END byp_mul_ex2_rs1[46]
+  PIN byp_mul_ex2_rs1[47]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 272.000 254.000 272.600 ;
+    END
+  END byp_mul_ex2_rs1[47]
+  PIN byp_mul_ex2_rs1[48]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 276.000 254.000 276.600 ;
+    END
+  END byp_mul_ex2_rs1[48]
+  PIN byp_mul_ex2_rs1[49]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 280.000 254.000 280.600 ;
+    END
+  END byp_mul_ex2_rs1[49]
+  PIN byp_mul_ex2_rs1[50]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 284.000 254.000 284.600 ;
+    END
+  END byp_mul_ex2_rs1[50]
+  PIN byp_mul_ex2_rs1[51]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 288.000 254.000 288.600 ;
+    END
+  END byp_mul_ex2_rs1[51]
+  PIN byp_mul_ex2_rs1[52]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 292.000 254.000 292.600 ;
+    END
+  END byp_mul_ex2_rs1[52]
+  PIN byp_mul_ex2_rs1[53]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 296.000 254.000 296.600 ;
+    END
+  END byp_mul_ex2_rs1[53]
+  PIN byp_mul_ex2_rs1[54]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 300.000 254.000 300.600 ;
+    END
+  END byp_mul_ex2_rs1[54]
+  PIN byp_mul_ex2_rs1[55]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 304.000 254.000 304.600 ;
+    END
+  END byp_mul_ex2_rs1[55]
+  PIN byp_mul_ex2_rs1[56]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 308.000 254.000 308.600 ;
+    END
+  END byp_mul_ex2_rs1[56]
+  PIN byp_mul_ex2_rs1[57]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 312.000 254.000 312.600 ;
+    END
+  END byp_mul_ex2_rs1[57]
+  PIN byp_mul_ex2_rs1[58]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 316.000 254.000 316.600 ;
+    END
+  END byp_mul_ex2_rs1[58]
+  PIN byp_mul_ex2_rs1[59]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 320.000 254.000 320.600 ;
+    END
+  END byp_mul_ex2_rs1[59]
+  PIN byp_mul_ex2_rs1[60]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 324.000 254.000 324.600 ;
+    END
+  END byp_mul_ex2_rs1[60]
+  PIN byp_mul_ex2_rs1[61]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 328.000 254.000 328.600 ;
+    END
+  END byp_mul_ex2_rs1[61]
+  PIN byp_mul_ex2_rs1[62]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 332.000 254.000 332.600 ;
+    END
+  END byp_mul_ex2_rs1[62]
+  PIN byp_mul_ex2_rs1[63]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 336.000 254.000 336.600 ;
+    END
+  END byp_mul_ex2_rs1[63]
+  PIN byp_mul_ex2_rs2[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 340.000 254.000 340.600 ;
+    END
+  END byp_mul_ex2_rs2[0]
+  PIN byp_mul_ex2_rs2[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 344.000 254.000 344.600 ;
+    END
+  END byp_mul_ex2_rs2[1]
+  PIN byp_mul_ex2_rs2[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 348.000 254.000 348.600 ;
+    END
+  END byp_mul_ex2_rs2[2]
+  PIN byp_mul_ex2_rs2[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 352.000 254.000 352.600 ;
+    END
+  END byp_mul_ex2_rs2[3]
+  PIN byp_mul_ex2_rs2[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 356.000 254.000 356.600 ;
+    END
+  END byp_mul_ex2_rs2[4]
+  PIN byp_mul_ex2_rs2[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 360.000 254.000 360.600 ;
+    END
+  END byp_mul_ex2_rs2[5]
+  PIN byp_mul_ex2_rs2[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 364.000 254.000 364.600 ;
+    END
+  END byp_mul_ex2_rs2[6]
+  PIN byp_mul_ex2_rs2[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 368.000 254.000 368.600 ;
+    END
+  END byp_mul_ex2_rs2[7]
+  PIN byp_mul_ex2_rs2[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 372.000 254.000 372.600 ;
+    END
+  END byp_mul_ex2_rs2[8]
+  PIN byp_mul_ex2_rs2[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 376.000 254.000 376.600 ;
+    END
+  END byp_mul_ex2_rs2[9]
+  PIN byp_mul_ex2_rs2[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 380.000 254.000 380.600 ;
+    END
+  END byp_mul_ex2_rs2[10]
+  PIN byp_mul_ex2_rs2[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 384.000 254.000 384.600 ;
+    END
+  END byp_mul_ex2_rs2[11]
+  PIN byp_mul_ex2_rs2[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 388.000 254.000 388.600 ;
+    END
+  END byp_mul_ex2_rs2[12]
+  PIN byp_mul_ex2_rs2[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 392.000 254.000 392.600 ;
+    END
+  END byp_mul_ex2_rs2[13]
+  PIN byp_mul_ex2_rs2[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 396.000 254.000 396.600 ;
+    END
+  END byp_mul_ex2_rs2[14]
+  PIN byp_mul_ex2_rs2[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 400.000 254.000 400.600 ;
+    END
+  END byp_mul_ex2_rs2[15]
+  PIN byp_mul_ex2_rs2[16]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 404.000 254.000 404.600 ;
+    END
+  END byp_mul_ex2_rs2[16]
+  PIN byp_mul_ex2_rs2[17]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 408.000 254.000 408.600 ;
+    END
+  END byp_mul_ex2_rs2[17]
+  PIN byp_mul_ex2_rs2[18]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 412.000 254.000 412.600 ;
+    END
+  END byp_mul_ex2_rs2[18]
+  PIN byp_mul_ex2_rs2[19]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 416.000 254.000 416.600 ;
+    END
+  END byp_mul_ex2_rs2[19]
+  PIN byp_mul_ex2_rs2[20]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 420.000 254.000 420.600 ;
+    END
+  END byp_mul_ex2_rs2[20]
+  PIN byp_mul_ex2_rs2[21]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 424.000 254.000 424.600 ;
+    END
+  END byp_mul_ex2_rs2[21]
+  PIN byp_mul_ex2_rs2[22]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 428.000 254.000 428.600 ;
+    END
+  END byp_mul_ex2_rs2[22]
+  PIN byp_mul_ex2_rs2[23]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 432.000 254.000 432.600 ;
+    END
+  END byp_mul_ex2_rs2[23]
+  PIN byp_mul_ex2_rs2[24]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 436.000 254.000 436.600 ;
+    END
+  END byp_mul_ex2_rs2[24]
+  PIN byp_mul_ex2_rs2[25]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 440.000 254.000 440.600 ;
+    END
+  END byp_mul_ex2_rs2[25]
+  PIN byp_mul_ex2_rs2[26]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 444.000 254.000 444.600 ;
+    END
+  END byp_mul_ex2_rs2[26]
+  PIN byp_mul_ex2_rs2[27]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 448.000 254.000 448.600 ;
+    END
+  END byp_mul_ex2_rs2[27]
+  PIN byp_mul_ex2_rs2[28]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 452.000 254.000 452.600 ;
+    END
+  END byp_mul_ex2_rs2[28]
+  PIN byp_mul_ex2_rs2[29]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 456.000 254.000 456.600 ;
+    END
+  END byp_mul_ex2_rs2[29]
+  PIN byp_mul_ex2_rs2[30]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 460.000 254.000 460.600 ;
+    END
+  END byp_mul_ex2_rs2[30]
+  PIN byp_mul_ex2_rs2[31]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 464.000 254.000 464.600 ;
+    END
+  END byp_mul_ex2_rs2[31]
+  PIN byp_mul_ex2_rs2[32]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 468.000 254.000 468.600 ;
+    END
+  END byp_mul_ex2_rs2[32]
+  PIN byp_mul_ex2_rs2[33]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 472.000 254.000 472.600 ;
+    END
+  END byp_mul_ex2_rs2[33]
+  PIN byp_mul_ex2_rs2[34]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 476.000 254.000 476.600 ;
+    END
+  END byp_mul_ex2_rs2[34]
+  PIN byp_mul_ex2_rs2[35]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 480.000 254.000 480.600 ;
+    END
+  END byp_mul_ex2_rs2[35]
+  PIN byp_mul_ex2_rs2[36]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 484.000 254.000 484.600 ;
+    END
+  END byp_mul_ex2_rs2[36]
+  PIN byp_mul_ex2_rs2[37]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 488.000 254.000 488.600 ;
+    END
+  END byp_mul_ex2_rs2[37]
+  PIN byp_mul_ex2_rs2[38]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 492.000 254.000 492.600 ;
+    END
+  END byp_mul_ex2_rs2[38]
+  PIN byp_mul_ex2_rs2[39]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 496.000 254.000 496.600 ;
+    END
+  END byp_mul_ex2_rs2[39]
+  PIN byp_mul_ex2_rs2[40]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 500.000 254.000 500.600 ;
+    END
+  END byp_mul_ex2_rs2[40]
+  PIN byp_mul_ex2_rs2[41]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 504.000 254.000 504.600 ;
+    END
+  END byp_mul_ex2_rs2[41]
+  PIN byp_mul_ex2_rs2[42]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 508.000 254.000 508.600 ;
+    END
+  END byp_mul_ex2_rs2[42]
+  PIN byp_mul_ex2_rs2[43]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 512.000 254.000 512.600 ;
+    END
+  END byp_mul_ex2_rs2[43]
+  PIN byp_mul_ex2_rs2[44]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 516.000 254.000 516.600 ;
+    END
+  END byp_mul_ex2_rs2[44]
+  PIN byp_mul_ex2_rs2[45]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 520.000 254.000 520.600 ;
+    END
+  END byp_mul_ex2_rs2[45]
+  PIN byp_mul_ex2_rs2[46]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 524.000 254.000 524.600 ;
+    END
+  END byp_mul_ex2_rs2[46]
+  PIN byp_mul_ex2_rs2[47]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 528.000 254.000 528.600 ;
+    END
+  END byp_mul_ex2_rs2[47]
+  PIN byp_mul_ex2_rs2[48]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 532.000 254.000 532.600 ;
+    END
+  END byp_mul_ex2_rs2[48]
+  PIN byp_mul_ex2_rs2[49]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 536.000 254.000 536.600 ;
+    END
+  END byp_mul_ex2_rs2[49]
+  PIN byp_mul_ex2_rs2[50]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 540.000 254.000 540.600 ;
+    END
+  END byp_mul_ex2_rs2[50]
+  PIN byp_mul_ex2_rs2[51]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 544.000 254.000 544.600 ;
+    END
+  END byp_mul_ex2_rs2[51]
+  PIN byp_mul_ex2_rs2[52]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 548.000 254.000 548.600 ;
+    END
+  END byp_mul_ex2_rs2[52]
+  PIN byp_mul_ex2_rs2[53]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 552.000 254.000 552.600 ;
+    END
+  END byp_mul_ex2_rs2[53]
+  PIN byp_mul_ex2_rs2[54]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 556.000 254.000 556.600 ;
+    END
+  END byp_mul_ex2_rs2[54]
+  PIN byp_mul_ex2_rs2[55]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 560.000 254.000 560.600 ;
+    END
+  END byp_mul_ex2_rs2[55]
+  PIN byp_mul_ex2_rs2[56]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 564.000 254.000 564.600 ;
+    END
+  END byp_mul_ex2_rs2[56]
+  PIN byp_mul_ex2_rs2[57]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 568.000 254.000 568.600 ;
+    END
+  END byp_mul_ex2_rs2[57]
+  PIN byp_mul_ex2_rs2[58]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 572.000 254.000 572.600 ;
+    END
+  END byp_mul_ex2_rs2[58]
+  PIN byp_mul_ex2_rs2[59]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 576.000 254.000 576.600 ;
+    END
+  END byp_mul_ex2_rs2[59]
+  PIN byp_mul_ex2_rs2[60]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 580.000 254.000 580.600 ;
+    END
+  END byp_mul_ex2_rs2[60]
+  PIN byp_mul_ex2_rs2[61]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 584.000 254.000 584.600 ;
+    END
+  END byp_mul_ex2_rs2[61]
+  PIN byp_mul_ex2_rs2[62]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 588.000 254.000 588.600 ;
+    END
+  END byp_mul_ex2_rs2[62]
+  PIN byp_mul_ex2_rs2[63]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 592.000 254.000 592.600 ;
+    END
+  END byp_mul_ex2_rs2[63]
+  PIN byp_mul_ex2_abort
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 596.000 254.000 596.600 ;
+    END
+  END byp_mul_ex2_abort
+  PIN byp_mul_ex2_xer[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 600.000 254.000 600.600 ;
+    END
+  END byp_mul_ex2_xer[0]
+  PIN byp_mul_ex2_xer[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 604.000 254.000 604.600 ;
+    END
+  END byp_mul_ex2_xer[1]
+  PIN byp_mul_ex2_xer[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 608.000 254.000 608.600 ;
+    END
+  END byp_mul_ex2_xer[2]
+  PIN byp_mul_ex2_xer[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 612.000 254.000 612.600 ;
+    END
+  END byp_mul_ex2_xer[3]
+  PIN byp_mul_ex2_xer[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 616.000 254.000 616.600 ;
+    END
+  END byp_mul_ex2_xer[4]
+  PIN byp_mul_ex2_xer[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 620.000 254.000 620.600 ;
+    END
+  END byp_mul_ex2_xer[5]
+  PIN byp_mul_ex2_xer[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 624.000 254.000 624.600 ;
+    END
+  END byp_mul_ex2_xer[6]
+  PIN byp_mul_ex2_xer[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 628.000 254.000 628.600 ;
+    END
+  END byp_mul_ex2_xer[7]
+  PIN byp_mul_ex2_xer[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 632.000 254.000 632.600 ;
+    END
+  END byp_mul_ex2_xer[8]
+  PIN byp_mul_ex2_xer[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 250.000 636.000 254.000 636.600 ;
+    END
+  END byp_mul_ex2_xer[9]
+  PIN mul_byp_ex6_rt[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 16.000 0.000 16.600 ;
+    END
+  END mul_byp_ex6_rt[0]
+  PIN mul_byp_ex6_rt[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 20.000 0.000 20.600 ;
+    END
+  END mul_byp_ex6_rt[1]
+  PIN mul_byp_ex6_rt[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 24.000 0.000 24.600 ;
+    END
+  END mul_byp_ex6_rt[2]
+  PIN mul_byp_ex6_rt[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 28.000 0.000 28.600 ;
+    END
+  END mul_byp_ex6_rt[3]
+  PIN mul_byp_ex6_rt[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 32.000 0.000 32.600 ;
+    END
+  END mul_byp_ex6_rt[4]
+  PIN mul_byp_ex6_rt[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 36.000 0.000 36.600 ;
+    END
+  END mul_byp_ex6_rt[5]
+  PIN mul_byp_ex6_rt[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 40.000 0.000 40.600 ;
+    END
+  END mul_byp_ex6_rt[6]
+  PIN mul_byp_ex6_rt[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 44.000 0.000 44.600 ;
+    END
+  END mul_byp_ex6_rt[7]
+  PIN mul_byp_ex6_rt[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 48.000 0.000 48.600 ;
+    END
+  END mul_byp_ex6_rt[8]
+  PIN mul_byp_ex6_rt[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 52.000 0.000 52.600 ;
+    END
+  END mul_byp_ex6_rt[9]
+  PIN mul_byp_ex6_rt[10]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 56.000 0.000 56.600 ;
+    END
+  END mul_byp_ex6_rt[10]
+  PIN mul_byp_ex6_rt[11]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 60.000 0.000 60.600 ;
+    END
+  END mul_byp_ex6_rt[11]
+  PIN mul_byp_ex6_rt[12]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 64.000 0.000 64.600 ;
+    END
+  END mul_byp_ex6_rt[12]
+  PIN mul_byp_ex6_rt[13]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 68.000 0.000 68.600 ;
+    END
+  END mul_byp_ex6_rt[13]
+  PIN mul_byp_ex6_rt[14]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 72.000 0.000 72.600 ;
+    END
+  END mul_byp_ex6_rt[14]
+  PIN mul_byp_ex6_rt[15]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 76.000 0.000 76.600 ;
+    END
+  END mul_byp_ex6_rt[15]
+  PIN mul_byp_ex6_rt[16]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 80.000 0.000 80.600 ;
+    END
+  END mul_byp_ex6_rt[16]
+  PIN mul_byp_ex6_rt[17]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 84.000 0.000 84.600 ;
+    END
+  END mul_byp_ex6_rt[17]
+  PIN mul_byp_ex6_rt[18]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 88.000 0.000 88.600 ;
+    END
+  END mul_byp_ex6_rt[18]
+  PIN mul_byp_ex6_rt[19]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 92.000 0.000 92.600 ;
+    END
+  END mul_byp_ex6_rt[19]
+  PIN mul_byp_ex6_rt[20]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 96.000 0.000 96.600 ;
+    END
+  END mul_byp_ex6_rt[20]
+  PIN mul_byp_ex6_rt[21]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 100.000 0.000 100.600 ;
+    END
+  END mul_byp_ex6_rt[21]
+  PIN mul_byp_ex6_rt[22]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 104.000 0.000 104.600 ;
+    END
+  END mul_byp_ex6_rt[22]
+  PIN mul_byp_ex6_rt[23]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 108.000 0.000 108.600 ;
+    END
+  END mul_byp_ex6_rt[23]
+  PIN mul_byp_ex6_rt[24]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 112.000 0.000 112.600 ;
+    END
+  END mul_byp_ex6_rt[24]
+  PIN mul_byp_ex6_rt[25]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 116.000 0.000 116.600 ;
+    END
+  END mul_byp_ex6_rt[25]
+  PIN mul_byp_ex6_rt[26]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 120.000 0.000 120.600 ;
+    END
+  END mul_byp_ex6_rt[26]
+  PIN mul_byp_ex6_rt[27]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 124.000 0.000 124.600 ;
+    END
+  END mul_byp_ex6_rt[27]
+  PIN mul_byp_ex6_rt[28]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 128.000 0.000 128.600 ;
+    END
+  END mul_byp_ex6_rt[28]
+  PIN mul_byp_ex6_rt[29]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 132.000 0.000 132.600 ;
+    END
+  END mul_byp_ex6_rt[29]
+  PIN mul_byp_ex6_rt[30]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 136.000 0.000 136.600 ;
+    END
+  END mul_byp_ex6_rt[30]
+  PIN mul_byp_ex6_rt[31]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 140.000 0.000 140.600 ;
+    END
+  END mul_byp_ex6_rt[31]
+  PIN mul_byp_ex6_rt[32]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 144.000 0.000 144.600 ;
+    END
+  END mul_byp_ex6_rt[32]
+  PIN mul_byp_ex6_rt[33]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 148.000 0.000 148.600 ;
+    END
+  END mul_byp_ex6_rt[33]
+  PIN mul_byp_ex6_rt[34]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 152.000 0.000 152.600 ;
+    END
+  END mul_byp_ex6_rt[34]
+  PIN mul_byp_ex6_rt[35]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 156.000 0.000 156.600 ;
+    END
+  END mul_byp_ex6_rt[35]
+  PIN mul_byp_ex6_rt[36]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 160.000 0.000 160.600 ;
+    END
+  END mul_byp_ex6_rt[36]
+  PIN mul_byp_ex6_rt[37]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 164.000 0.000 164.600 ;
+    END
+  END mul_byp_ex6_rt[37]
+  PIN mul_byp_ex6_rt[38]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 168.000 0.000 168.600 ;
+    END
+  END mul_byp_ex6_rt[38]
+  PIN mul_byp_ex6_rt[39]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 172.000 0.000 172.600 ;
+    END
+  END mul_byp_ex6_rt[39]
+  PIN mul_byp_ex6_rt[40]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 176.000 0.000 176.600 ;
+    END
+  END mul_byp_ex6_rt[40]
+  PIN mul_byp_ex6_rt[41]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 180.000 0.000 180.600 ;
+    END
+  END mul_byp_ex6_rt[41]
+  PIN mul_byp_ex6_rt[42]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 184.000 0.000 184.600 ;
+    END
+  END mul_byp_ex6_rt[42]
+  PIN mul_byp_ex6_rt[43]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 188.000 0.000 188.600 ;
+    END
+  END mul_byp_ex6_rt[43]
+  PIN mul_byp_ex6_rt[44]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 192.000 0.000 192.600 ;
+    END
+  END mul_byp_ex6_rt[44]
+  PIN mul_byp_ex6_rt[45]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 196.000 0.000 196.600 ;
+    END
+  END mul_byp_ex6_rt[45]
+  PIN mul_byp_ex6_rt[46]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 200.000 0.000 200.600 ;
+    END
+  END mul_byp_ex6_rt[46]
+  PIN mul_byp_ex6_rt[47]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 204.000 0.000 204.600 ;
+    END
+  END mul_byp_ex6_rt[47]
+  PIN mul_byp_ex6_rt[48]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 208.000 0.000 208.600 ;
+    END
+  END mul_byp_ex6_rt[48]
+  PIN mul_byp_ex6_rt[49]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 212.000 0.000 212.600 ;
+    END
+  END mul_byp_ex6_rt[49]
+  PIN mul_byp_ex6_rt[50]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 216.000 0.000 216.600 ;
+    END
+  END mul_byp_ex6_rt[50]
+  PIN mul_byp_ex6_rt[51]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 220.000 0.000 220.600 ;
+    END
+  END mul_byp_ex6_rt[51]
+  PIN mul_byp_ex6_rt[52]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 224.000 0.000 224.600 ;
+    END
+  END mul_byp_ex6_rt[52]
+  PIN mul_byp_ex6_rt[53]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 228.000 0.000 228.600 ;
+    END
+  END mul_byp_ex6_rt[53]
+  PIN mul_byp_ex6_rt[54]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 232.000 0.000 232.600 ;
+    END
+  END mul_byp_ex6_rt[54]
+  PIN mul_byp_ex6_rt[55]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 236.000 0.000 236.600 ;
+    END
+  END mul_byp_ex6_rt[55]
+  PIN mul_byp_ex6_rt[56]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 240.000 0.000 240.600 ;
+    END
+  END mul_byp_ex6_rt[56]
+  PIN mul_byp_ex6_rt[57]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 244.000 0.000 244.600 ;
+    END
+  END mul_byp_ex6_rt[57]
+  PIN mul_byp_ex6_rt[58]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 248.000 0.000 248.600 ;
+    END
+  END mul_byp_ex6_rt[58]
+  PIN mul_byp_ex6_rt[59]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 252.000 0.000 252.600 ;
+    END
+  END mul_byp_ex6_rt[59]
+  PIN mul_byp_ex6_rt[60]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 256.000 0.000 256.600 ;
+    END
+  END mul_byp_ex6_rt[60]
+  PIN mul_byp_ex6_rt[61]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 260.000 0.000 260.600 ;
+    END
+  END mul_byp_ex6_rt[61]
+  PIN mul_byp_ex6_rt[62]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 264.000 0.000 264.600 ;
+    END
+  END mul_byp_ex6_rt[62]
+  PIN mul_byp_ex6_rt[63]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 268.000 0.000 268.600 ;
+    END
+  END mul_byp_ex6_rt[63]
+  PIN mul_byp_ex6_xer[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 272.000 0.000 272.600 ;
+    END
+  END mul_byp_ex6_xer[0]
+  PIN mul_byp_ex6_xer[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 276.000 0.000 276.600 ;
+    END
+  END mul_byp_ex6_xer[1]
+  PIN mul_byp_ex6_xer[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 280.000 0.000 280.600 ;
+    END
+  END mul_byp_ex6_xer[2]
+  PIN mul_byp_ex6_xer[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 284.000 0.000 284.600 ;
+    END
+  END mul_byp_ex6_xer[3]
+  PIN mul_byp_ex6_xer[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 288.000 0.000 288.600 ;
+    END
+  END mul_byp_ex6_xer[4]
+  PIN mul_byp_ex6_xer[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 292.000 0.000 292.600 ;
+    END
+  END mul_byp_ex6_xer[5]
+  PIN mul_byp_ex6_xer[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 296.000 0.000 296.600 ;
+    END
+  END mul_byp_ex6_xer[6]
+  PIN mul_byp_ex6_xer[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 300.000 0.000 300.600 ;
+    END
+  END mul_byp_ex6_xer[7]
+  PIN mul_byp_ex6_xer[8]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 304.000 0.000 304.600 ;
+    END
+  END mul_byp_ex6_xer[8]
+  PIN mul_byp_ex6_xer[9]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 308.000 0.000 308.600 ;
+    END
+  END mul_byp_ex6_xer[9]
+  PIN mul_byp_ex6_cr[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 312.000 0.000 312.600 ;
+    END
+  END mul_byp_ex6_cr[0]
+  PIN mul_byp_ex6_cr[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 316.000 0.000 316.600 ;
+    END
+  END mul_byp_ex6_cr[1]
+  PIN mul_byp_ex6_cr[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 320.000 0.000 320.600 ;
+    END
+  END mul_byp_ex6_cr[2]
+  PIN mul_byp_ex6_cr[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 324.000 0.000 324.600 ;
+    END
+  END mul_byp_ex6_cr[3]
+  PIN mul_byp_ex5_abort
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 328.000 0.000 328.600 ;
+    END
+  END mul_byp_ex5_abort
+  PIN mul_byp_ex5_ord_done
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 332.000 0.000 332.600 ;
+    END
+  END mul_byp_ex5_ord_done
+  PIN mul_byp_ex5_done
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 336.000 0.000 336.600 ;
+    END
+  END mul_byp_ex5_done
+  PIN mul_spr_running[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT -4.000 340.000 0.000 340.600 ;
+    END
+  END mul_spr_running[0]
+END tri_st_mult
+END LIBRARY
+
