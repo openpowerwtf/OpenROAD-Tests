@@ -6,6 +6,7 @@
   * sky130hd pdk
   * no i/o preplace (except macros are gen'd with E-inputs and W-outputs)
   * no set_input_delay, set_output_delay constraints on macro pins
+  * trilib components not mapped to specific tech cells
 
 <br>
 <div>
