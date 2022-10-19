@@ -39,6 +39,16 @@ make clean_all; make
 make gui_final
 ```
 
+* need to fix gdsDummy to grab parameters and put in gen'd verilog (iuq_cpl)
+* but yosys is gen's something weird in 1_synth.v
+
+```
+  \$paramod$4ff189b92e8676c02570ccfc5e3a837386806ee6\tri_iuq_cpl_arr  \iuq_cpl_top0.iuq_cpl0.iuq_cpl_arr  (
+```
+
+* if i delete the extra stuff on front, floorplan continues (was ending cuz macro.cfg didn't match, but it also wasn't find that gds/lef earlier)
+
+
 * need to get macros placed good enough and overall size correct to route and not blow memory
 * struggling but completed with 16G; could do these separately (esp. ifetch)
 

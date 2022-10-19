@@ -37,7 +37,7 @@ export SDC_FILE      = $(DESIGN_DIR)/constraint.sdc
 export DIE_AREA =   0  0   3500   4500
 export CORE_AREA = 10 10   3490   4490
 
-export PLACE_DENSITY ?= 0.25
+export PLACE_DENSITY ?= 0.20
 export USE_FILL 0
 
 export ABC_CLOCK_PERIOD_IN_PS = 2000
