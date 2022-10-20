@@ -41,5 +41,6 @@
 <br>
  
 * units should eventually be built with at least one extra level of hierarchy to control layout and timing
-
+* yosys creates a modified instance name for blackboxes instantiated with parameter overrides, so macro.cfg instance name won't match; this
+ should be avoided anyway - the blackbox should be the lowest level common denominator (a specific array instance) rather than a parent macro
  
