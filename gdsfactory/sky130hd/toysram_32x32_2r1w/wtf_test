@@ -1,0 +1,197 @@
+#!/usr/bin/python3
+
+# problems
+# 1. not getting size in gds/lef (.005x.005) - FIXED WITH PROPER LAYER
+# 2. not getting ports/pins in gds/lef - FIXED WITH PROPER LAYER
+# 3. not getting meta info on ports - are those coming from somewhere else in openlane like .def?
+#    i dont get them with ALU.gds and my lef.tcl
+#         DIRECTION OUTPUT TRISTATE ;
+#         USE SIGNAL ;
+#    everything else compares exactly
+
+'''
+** HUH?  appears to be cuz i was reading in ALU.gds in wildcard????
+so it was complaining about clk missing in ALU (which it does)?
+
+now trying openroad-flow i get this:
+home/wtf/projects/OpenROAD/src/drt/src/io/io.cpp
+[INFO ORD-0030] Using 8 thread(s).
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                1000
+Number of layers:     13
+Number of macros:     445
+Number of vias:       25
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+[ERROR DRT-0404] mterm clk not found in db
+Error: detail_route.tcl, 45 DRT-0404
+'''
+
+# notes
+# li: local interconnect (high-resistivity, slower than poly, used in cells only)
+#      there is one in sky130
+# tap cell: needed for sky130 to connect bulk areas to substrate; must be spaced within
+#      distance constraint
+'''
+wtf_test
+magic -noconsole -dnull -rcfile scripts/sky130B.magicrc < scripts/lef.tcl |& tee /dev/null lef.log
+
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO wtf_test
+  CLASS BLOCK ;
+  FOREIGN wtf_test ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 0.005 BY 0.005 ;
+END wtf_test
+END LIBRARY
+'''
+
+# should be like this from openlane; i DO get similar with
+#   my lef.tcl script using ALU.gds (some things missing like DIRECTION and USE SIGNAL)
+'''
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO ALU
+  CLASS BLOCK ;
+  FOREIGN ALU ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN add_cr[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 74.840 100.000 75.440 ;
+    END
+  END add_cr[0]
+  PIN add_cr[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 80.960 100.000 81.560 ;
+    END
+  END add_cr[1]
+
+  ...
+
+    OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 94.300 87.125 ;
+      LAYER met1 ;
+        RECT 5.520 8.540 94.300 90.400 ;
+      LAYER met2 ;
+        RECT 6.990 6.275 90.990 92.325 ;
+      LAYER met3 ;
+
+   ...
+
+  END
+END ALU
+END LIBRARY
+
+'''
+
+
+import gdsfactory as gf
+import sky130 as pdk
+
+# for cell info
+# https://www.klayout.org/klayout-pypi/overview/cell/
+
+# GDS layers are tuples of ints (but if we use only one number it assumes the other number is 0)
+width = 50
+height = 150
+
+# this is from example -
+# https://gdsfactory.github.io/gdsfactory/notebooks/00_geometry.html
+@gf.cell
+def straight(length=10, width=1, layer=(1, 0)):
+    WG = gf.Component()
+    WG.add_polygon([(0, 0), (length, 0), (length, width), (0, width)], layer=layer)
+    WG.add_port(
+        name="o1", center=[0, width / 2], width=width, orientation=180, layer=layer
+    )
+    WG.add_port(
+        name="o2", center=[length, width / 2], width=width, orientation=0, layer=layer
+    )
+    return WG
+
+# this gets all the ref namings in tree list in gds
+def addPort(comp, name, pos, size=[4, .6], layer=(70, 16)):
+   pin = gf.components.rectangle(name=name, size=size, layer=layer).move(pos)
+   # https://gdsfactory.github.io/gdsfactory/notebooks/00_geometry.html
+   #Any Component can have “Port”s in it which allow you to snap geometry together like legos.
+   # so you add port on end and then connect to other port
+   # wg2.connect("o1", wg1.ports["o2"])
+   # but i dont get this in gds
+   comp.add_port(name, center=pin.center, width=size[0], orientation=0, layer=(70,20), port_type='electrical')
+
+   comp << pin
+   #cant add size! can add anchor, texttype
+   comp.add_label(text=name, position=pin.center, layer=layer)
+
+   return pin
+
+@gf.cell
+def top(width, height):
+   c = gf.Component('wtf_test')
+   # need this for total comp shape?
+   # prBoundary.boundary=235/4
+   c.add_polygon(
+       [(0, 0), (0, height), (width, height), (width, 0)], layer=(235,4)
+   )
+
+   #p = addPort(c, 'clk', [0, height-2], layer=(70,16))
+   for i in range(1):
+      p = addPort(c, f'a[{i}]', [0, height-(10+i*4)], layer=(70,16))
+   for i in range(1):
+      p = addPort(c, f'di[{i}]', [0, height-(20+i*4)], layer=(70,16))
+   for i in range(1):
+      p = addPort(c, f'do[{i}]', [width, height-(20+i*4)], layer=(70,16))
+   p = addPort(c, 'VPWR', [0, 6], layer=(71,16))
+   p = addPort(c, 'VGND', [0, 2], layer=(71,16))
+
+   #gf.add_pins.add_pins_triangle(c, layer=(70,16))
+   #gf.add_labels(c, layer=(70,16))
+
+   '''
+   # need this for timing in .lib ?
+   # assume this is relative to parent??? no
+   m = gf.Component('ra')
+
+   m.add_polygon(
+       [(10, 10), (10, height-15), (width-15, height-15), (width-15, 10)], layer=(81,4)
+   )
+   p = addPort(m, 'clk', [0, height-2], layer=(70,16))
+   for i in range(1):
+      p = addPort(m, f'a[{i}]', [0, height-(10+i*4)], layer=(70,16))
+   for i in range(1):
+      p = addPort(m, f'di[{i}]', [0, height-(20+i*4)], layer=(70,16))
+   for i in range(1):
+      p = addPort(m, f'do[{i}]', [width, height-(20+i*4)], layer=(70,16))
+   p = addPort(m, 'vccd1', [0, 6], layer=(71,16))
+   p = addPort(m, 'vssd1', [0, 2], layer=(71,16))
+
+   c << m
+   '''
+   #c.add_port('a[0]', port=m.ports['a[0]'], orientation=180, port_type='electrical', layer=(70, 16))
+   #c.add_port('do[0]', port=m.ports['do[0]'], orientation=90, port_type='electrical', layer=(70, 16))
+   #c.add_port('vccd1', port=m.ports['vccd1'], orientation=90, port_type='electrical', layer=(70, 16))
+   #c.add_port
+
+   return c
+
+c = top(width, height, name='wtf_test', info=dict(wtf='huh'))
+
+c.pprint()
+print(c.get_ports_list())
+
+c.write_gds('wtf_test.gds')

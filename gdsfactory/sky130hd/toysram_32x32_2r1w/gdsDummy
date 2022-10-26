@@ -440,11 +440,22 @@ foreach o $outs {
 if __name__ == '__main__':
 
    from optparse import OptionParser
-   parser = OptionParser()
+   parser = OptionParser(usage='%prog [options] module [(w,h)] [pinSpacing]')
    (options, args) = parser.parse_args()
-   if len(args) == 1:
+   # need at least name and size
+   if len(args) > 0:
       name = args[0]
-      ra = GDSDummy(name, (50, 150))
+      if len(args) > 1:
+         size = eval(args[1])
+      else:
+         size = (50, 150)
+      if len(args) > 2:
+         pinSpacing = float(args[2])
+      else:
+         pinSpacing = 4
+      print(f'Building {name} with size={size}, pinSpacing={pinSpacing}')
+      ra = GDSDummy(name, size)
+      ra.pinSpacing = pinSpacing
       ios = ra.parse_verilog(f'{name}.v', None)
       for p in ios:
          ra.add_pin(p)
