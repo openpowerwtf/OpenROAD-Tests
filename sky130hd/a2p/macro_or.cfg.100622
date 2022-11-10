@@ -1,0 +1,25 @@
+RegFilePluginComp_regFile.genblk1.rf   R180    600  1800
+
+BYPASS_RA_RB_RS                        R0      400   700
+
+SRC1                                   R0      700  1300
+SRC2                                   R0      700  1000
+SRC2_A                                 R0      700   700
+
+MUL_HH                                 R0     1600  1700
+MUL_HL                                 R0     1600  1400
+MUL_LH                                 R0     1600  1100
+MUL_LL                                 R0     1600   800
+
+MUL_ADD2                               R0     1300  1150
+MUL_ADD1                               R0     1150  1150
+FX_ALU                                 R0     1150   950
+FX_ALUL                                R0     1150   700
+FX_DIV                                 R0     1150   400
+
+WB_EXECUTE                             R0     1150  1500
+
+PC_LOAD                                R90     600   600
+
+IBusCachedPlugin_cache                 R0      100   100
+dataCache_1_                           R0      850   100
